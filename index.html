@@ -16,6 +16,14 @@ body { font-family: arial }
 </div> 
 </center>
 <script>
+var audioElement0 = document.createElement('audio');
+audioElement0.setAttribute('src', 'theme.wav');
+audioElement0.setAttribute('autoplay', 'autoplay');
+
+audioElement0.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
 	//warning  to  owner this code is public
 	// dont post your passwords here dumbass
   async function fools() {
