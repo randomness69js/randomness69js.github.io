@@ -8,7 +8,7 @@ body { font-family: arial }
 </head>
 <body id="body">
 <center> 
-<div id="t2">
+<div id="t2" hidden=true>
 	<center>
 <p> Click anywhere to begin</p>
 	</center>
@@ -22,6 +22,7 @@ body { font-family: arial }
 </div> 
 </center>
 <script>
+	document.getElementById("t2")[0].hidden=null;
 alert("")
 var audioElement0 = document.createElement('audio');
 audioElement0.setAttribute('src', 'theme.ogg');
