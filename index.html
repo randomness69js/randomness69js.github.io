@@ -23,8 +23,7 @@ audioElement0.setAttribute('autoplay', 'autoplay');
 audioElement0.addEventListener("canplaythrough", () => {
    audioElement0.play().catch(e => {
       window.addEventListener('click', () => {
-         audioElement0.play()
-	      fools()
+         audioElement0.play();foola();
             }, { once: true })
 
    })
