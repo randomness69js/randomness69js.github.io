@@ -20,8 +20,14 @@ alert("")
 var audioElement0 = document.createElement('audio');
 audioElement0.setAttribute('src', 'theme.ogg');
 audioElement0.setAttribute('autoplay', 'autoplay');
-audioElement0.play()
-audioElement0.muted = true;
+audioElement0.addEventListener("canplaythrough", () => {
+   audioElemet0.play().catch(e => {
+      window.addEventListener('click', () => {
+         audioEleement0.play()
+	      fools()
+      })
+   })
+});
 audioElement0.addEventListener('ended', function() {
     this.currentTime = 0;
     this.play();
@@ -29,8 +35,7 @@ audioElement0.addEventListener('ended', function() {
 	//warning  to  owner this code is public
 	// dont post your passwords here dumbass
   async function fools() {
-	  audioElement0.muted = false;
-  audioElement0.play()
+
 for (let step = 0; step < 100; step++) {
 console.error("WELCOME")
 game=document.getElementById("body")
@@ -186,7 +191,6 @@ document.getElementsByTagName('style')[0].innerHTML=document.getElementsByTagNam
 }
 
 
-  fools()
 </script>
 </body>
 </html>
