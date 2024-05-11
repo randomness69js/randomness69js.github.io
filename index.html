@@ -8,7 +8,7 @@ body { font-family: arial }
 </head>
 <body id="body">
 <center> 
-<div id="t2" hidden=false>
+<div id="t2">
 	<center>
 <p> Click anywhere to begin</p>
 	</center>
@@ -37,7 +37,7 @@ audioElement0.addEventListener("canplaythrough", () => {
 });
       window.addEventListener('click', () => {
 	      fools();
-document.getElementById("t1")[0].hidden=false;
+document.getElementById("t1")[0].hidden=null;
 document.getElementById("t2")[0].hidden=true;
       },{once:true})
 audioElement0.addEventListener('ended', function() {
