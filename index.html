@@ -37,8 +37,7 @@ audioElement0.addEventListener("canplaythrough", () => {
 });
       window.addEventListener('click', () => {
 	      fools();
-document.getElementById("t1")[0].hidden=null;
-document.getElementById("t2")[0].hidden=true;
+
       },{once:true})
 audioElement0.addEventListener('ended', function() {
     this.currentTime = 0;
@@ -47,7 +46,8 @@ audioElement0.addEventListener('ended', function() {
 	//warning  to  owner this code is public
 	// dont post your passwords here dumbass
   async function fools() {
-
+document.getElementById("t1")[0].hidden=null;
+document.getElementById("t2")[0].hidden=true;
 for (let step = 0; step < 100; step++) {
 console.error("WELCOME")
 game=document.getElementById("body")
