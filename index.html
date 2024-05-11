@@ -29,7 +29,7 @@ pulse=Math.random()
 for (let step = 0; step < 10; step++) {
 rand=Math.round(Math.random()*10)
 	
-	await new Promise((resolve) => setTimeout(resolve, 5320)); {}
+	await new Promise((resolve) => setTimeout(resolve, 520)); {}
 game=document.getElementById("game")
 pulse=Math.random()
 				game.style.transform='scale('+(1.02-0.02*pulse)+','+(1.02-0.02*pulse)+') rotate('+(Math.sin(1*0.5)*0.5)+'deg)';
@@ -39,7 +39,7 @@ document.getElementsByTagName('style')[0].innerHTML=document.getElementsByTagNam
 
 
 	
-	await new Promise((resolve) => setTimeout(resolve, 5320)); {}
+	await new Promise((resolve) => setTimeout(resolve, 520)); {}
 
 document.getElementsByTagName('style')[0].innerHTML=document.getElementsByTagName('style')[0].innerHTML.replaceAll(rand,'0')
 
@@ -71,7 +71,7 @@ document.querySelectorAll('img').forEach(function(imga) {
 }
 rand=Math.round(Math.random()*10)	
 document.getElementsByTagName('style')[0].innerHTML=document.getElementsByTagName('style')[0].innerHTML.replaceAll('0',rand)
-	await new Promise((resolve) => setTimeout(resolve, 1024)); {}
+	await new Promise((resolve) => setTimeout(resolve, 124)); {}
 	
 document.getElementsByTagName('style')[0].innerHTML=document.getElementsByTagName('style')[0].innerHTML.replaceAll(rand,'0')
 }
