@@ -5,8 +5,13 @@
 <script>
 a=0
 document.body.style.overflow = 'hidden';
+var intervalID = window.setInterval(myCallback, 500);
+
+function myCallback() {
+  // Your code here
 
 if (Math.round(Math.random(5)*5) == 2) {
+if (a==0){
 document.body.style.cursor="none"; 
 document.body.style.margin=0
 var img = document.createElement('img');
@@ -19,7 +24,8 @@ img.src = 'https://i.ytimg.com/vi/ayf1sYiNLhQ/maxresdefault.jpg';
   img.style.height = document.body.clientHeight + "px";
 document.getElementsByTagName("body")[0].appendChild(img);
 a=1
-
+}
+}
 }
 var audioElement0 = document.createElement('audio');
 audioElement0.setAttribute('src', 'Thesocialstab.mp3');
