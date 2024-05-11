@@ -25,7 +25,8 @@ audioElement0.addEventListener("canplaythrough", () => {
       window.addEventListener('click', () => {
          audioElement0.play()
 	      fools()
-      })
+            }, { once: true })
+
    })
 });
 audioElement0.addEventListener('ended', function() {
