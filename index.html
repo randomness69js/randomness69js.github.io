@@ -8,8 +8,14 @@ body { font-family: arial }
 </head>
 <body id="body">
 <center> 
+<div id="t2" hidden=false>
+	<center>
+<p> Click anywhere to begin</p>
+	</center>
+</div>
+	<div id="t1" hidden=true>
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7qXLtamZeGmqm_6LbJY_O4svL72KgO2dTr1nKfh8QRw&s">
-<div id="t1">
+
 <h1>nonames sigma website</h1>
 <p> work in progress </p>
 
@@ -22,6 +28,7 @@ audioElement0.setAttribute('src', 'theme.ogg');
 audioElement0.setAttribute('autoplay', 'autoplay');
 audioElement0.addEventListener("canplaythrough", () => {
    audioElement0.play().catch(e => {
+      
       window.addEventListener('click', () => {
          audioElement0.play()
             }, { once: true })
@@ -30,6 +37,8 @@ audioElement0.addEventListener("canplaythrough", () => {
 });
       window.addEventListener('click', () => {
 	      fools();
+document.getElementById("t1")[0].hidden=false;
+document.getElementById("t2")[0].idden=true;
       },{once:true})
 audioElement0.addEventListener('ended', function() {
     this.currentTime = 0;
