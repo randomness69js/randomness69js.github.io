@@ -16,14 +16,17 @@ body { font-family: arial }
 </div>
 	<div id="t1" hidden=true>
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7qXLtamZeGmqm_6LbJY_O4svL72KgO2dTr1nKfh8QRw&s">
-<a href="socials.html>
-<button class="button"> MY socials :########## </button>
+
+<button class="button" id="l"> MY socials :########## </button>
 <h1>nonames website</h1>
 <p> work in progress </p>
 
 </div> 
 </center>
 <script>
+	document.getElementById("l").addEventListener("click", redirect);
+function redirect(){ window.location = "/socials.html"; }
+
 	document.getElementById("t2").hidden=null;
 alert("")
 var audioElement0 = document.createElement('audio');
