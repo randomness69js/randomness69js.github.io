@@ -2,5 +2,22 @@
 <body>
 <a href="https://discord.gg/8F9qcUVZMC">JOIN JOIN JOIN JOIN JOIN JIOIN</a>
 <a href="https://www.youtube.com/channel/UCHKdPjiTl2F8NNU1aIXv3GQ"> SUBSCRIBE </a>
+var audioElement0 = document.createElement('audio');
+audioElement0.setAttribute('src', 'Thesocialstab.mp3');
+audioElement0.setAttribute('autoplay', 'autoplay');
+audioElement0.addEventListener("canplaythrough", () => {
+   audioElement0.play().catch(e => {
+      
+      window.addEventListener('click', () => {
+         audioElement0.play()
+            }, { once: true })
+
+   })
+});
+  audioElement0.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+
 </body>
 </html>
