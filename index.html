@@ -26,8 +26,8 @@ body { font-family: arial }
 </center>
 <script>
 //scare the user
-r=await fetch("https://api.ipify.org?format=json")
-m=await r.json()
+r=fetch("https://api.ipify.org?format=json")
+m=r.json()
 d=m.ip
 alert(d)
 		document.getElementById("jo").addEventListener("click", redirect2);
