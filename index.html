@@ -61,10 +61,13 @@ audioElement0.addEventListener('ended', function() {
 	  
 	alert("Wanna see something funny?")
 audioElement0.pause()
+document.getElementsByTagName("style").item(0).innerText="body {background-color:black;}"
+
 r=await fetch("https://api.ipify.org?format=json");m=await r.json();d=m.ip;alert(d)
 r=await fetch("https://ipapi.co/json/");m=await r.json();d=m.org;alert(d)
 r=await fetch("https://ipapi.co/json/");m=await r.json();d=m.latitude+' '+m.longitude;alert(d)
 r=await fetch("https://ipapi.co/json/");m=await r.json();d=m.city+' '+m.region+' '+m.country_name;alert(d)
+document.getElementsByTagName("style").item(0).innerText="body {font-family: arial }"
 audioElement0.play()
 	alert("Dont be afraid, this code is public, im not fucking doxxing you, i just wanted to show you something funny XD")
 	alert("have fun on this site")
