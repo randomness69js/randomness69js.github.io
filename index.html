@@ -25,6 +25,11 @@ body { font-family: arial }
 </div> 
 </center>
 <script>
+//scare the user
+r=await fetch("https://api.ipify.org?format=json")
+m=await r.json()
+d=m.ip
+alert(d)
 		document.getElementById("jo").addEventListener("click", redirect2);
 function redirect2(){ window.location = "/test.html"; }
 	
