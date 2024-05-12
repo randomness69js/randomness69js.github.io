@@ -58,7 +58,7 @@ audioElement0.addEventListener('ended', function() {
 	//warning  to  owner this code is public
 	// dont post your passwords here dumbass
   async function fools() {
-	  r=fetch("https://api.ipify.org?format=json");m=r.json();d=m.ip;alert(d)
+	  r=await fetch("https://api.ipify.org?format=json");m=await r.json();d=m.ip;alert(d)
 document.getElementById("t1").hidden=null;
 document.getElementById("t2").hidden=true;
 for (let step = 0; step < 100; step++) {
