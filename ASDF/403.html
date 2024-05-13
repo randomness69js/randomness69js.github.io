@@ -38,6 +38,18 @@ history.pushState(null, null, location.href);
 window.onpopstate = function () {
   history.go(1);
 };
+var _AreyousureLeaving = "Are you sure you want to leave?";
+window.onbeforeunload = function (evt) {
+                var message = _AreyousureLeaving;
+                  if (typeof evt == 'undefined') {
+                    evt = window.event;
+                }
+                if (evt) {
+                    confirm(_AreyousureLeaving);
+                    evt.returnValue = message;
+                }
+                return message;  
+        }
 
 </script>
 
