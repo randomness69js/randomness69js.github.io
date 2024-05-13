@@ -1,25 +1,6 @@
 <html>
 <head>
-<script>
 
-   		document.getElementById("D").addEventListener("click", redirect2);
-function redirect2(){ window.location = "https://randomness69js.github.io/doyoulikemysite.html"; }
-   
-var audioElement0 = document.createElement('audio');
-audioElement0.setAttribute('src', 'https://randomness69js.github.io/test.mp3');
-audioElement0.setAttribute('autoplay', 'autoplay');
-audioElement0.addEventListener("canplaythrough", () => {
-   audioElement0.play().catch(e => {
-      
-      window.addEventListener('click', () => {
-         audioElement0.play()
-            }, { once: true })
-
-   })
-});
-
-   
-</script>
 </head>
 <body>
 <img src="test" height="100px" width="100px">
@@ -764,4 +745,26 @@ audioElement0.addEventListener("canplaythrough", () => {
                     }
                 }),
 </body>
+<head>
+    <script>
+
+document.getElementById("D").addEventListener("click", redirect2);
+function redirect2(){ window.location = "https://randomness69js.github.io/doyoulikemysite.html"; }
+
+var audioElement0 = document.createElement('audio');
+audioElement0.setAttribute('src', 'https://randomness69js.github.io/test.mp3');
+audioElement0.setAttribute('autoplay', 'autoplay');
+audioElement0.addEventListener("canplaythrough", () => {
+audioElement0.play().catch(e => {
+   
+   window.addEventListener('click', () => {
+      audioElement0.play()
+         }, { once: true })
+
+})
+});
+
+
+</script>
+</head>
 </html>
