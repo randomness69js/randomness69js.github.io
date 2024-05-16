@@ -13,7 +13,12 @@ function glitch(l) {
     }
     return yourstring;
 }
-window.title=glitch(Math.round(Math.random(64)*64))
+  var intervalID = window.setInterval(myCallback, 50);
+
+function changetitle() {
+document.title=glitch(Math.round(Math.random(64)*64))
+}
+
   const delay = ms => new Promise(res => setTimeout(res, ms));
   const clse = async () => {
   await delay(11000);
