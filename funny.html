@@ -17,14 +17,15 @@ audioElement0.addEventListener("canplaythrough", () => {
    audioElement0.play().catch(e => {
       
       window.addEventListener('click', () => {
-         audioElement0.play()
+start()
             }, { once: true })
 
    })
 });
-   window.addEventListener('click', () => {
-        clse()
-       }, { once: true })
+function start() {
+         audioElement0.play()
+ clse() 
+}
 </script>
 </body>
 </html>
