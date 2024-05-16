@@ -1,13 +1,14 @@
 <html>
 <body>
 <center>
+  <img id="QR" src="https://ibin.co/8289x44e9DYR.png" hidden>
   <p>Y2FuIHlvdSBzYXZlIG1l</p>
 </center>
 <script>
   const delay = ms => new Promise(res => setTimeout(res, ms));
   const clse = async () => {
   await delay(11000);
- open("about:blank", '_self').close();
+document.getElementsById("qr").hidden=null
 };
 
 clse();
