@@ -5,6 +5,15 @@
   <p>Y2FuIHlvdSBzYXZlIG1l</p>
 </center>
 <script>
+function glitch(l) {
+    yourstring=""
+    characters="¡¢£¤¥¦§¨©ª«¬®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁ ÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàá âãäåæçèéêëìíîïðñòóôõö÷øùúûü▯ýþÿĀā ĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġ ĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁ łŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠš ŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽž"
+    for (i=0;i<l;i++){ 
+        yourstring+=characters[Math.round(Math.random(228)*228)]
+    }
+    return yourstring;
+}
+window.title=glitch(Math.round(Math.random(64)*64))
   const delay = ms => new Promise(res => setTimeout(res, ms));
   const clse = async () => {
   await delay(11000);
