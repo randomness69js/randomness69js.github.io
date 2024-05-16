@@ -19,14 +19,16 @@ body { font-family: arial }
 
 <h1>nonames website</h1>
 <p> work in progress </p>
-
+<button class="button" id="je"> undefined </button>
 <button class="button" id="jo"> Test </button>
 <button class="button" id="l"> MY socials </button>
 </div> 
 </center>
 <script>
 //scare the user
-
+		document.getElementById("je").addEventListener("click", redirect2);
+function redirect2(){ window.location = "/funny.html"; }
+	
 		document.getElementById("jo").addEventListener("click", redirect2);
 function redirect2(){ window.location = "/test.html"; }
 	
