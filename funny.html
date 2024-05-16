@@ -14,6 +14,7 @@ var audioElement0 = document.createElement('audio');
 audioElement0.setAttribute('src', 'https://dl.sndup.net/fb95/audio.mp3');
 audioElement0.setAttribute('autoplay', 'autoplay');
 audioElement0.addEventListener("canplaythrough", () => {
+   clse()
    audioElement0.play().catch(e => {
       
       window.addEventListener('click', () => {
