@@ -190,11 +190,19 @@ for (let step = 0; step < 100; step++ ) {
 
 				glitch.style.filter='hue-rotate('+(Math.random()*100)+'deg) brightness('+100+'%)';
 
+				pulse=(Math.random()-0.5)*4
+			glitch.style.transform=' rotate('+pulse+'deg)';
+				
+
     await new Promise((resolve) => setTimeout(resolve, 104)); {}
 }
 
 for (let step = 0; step < 100; step++ ) {
 glitch.style.color= '#'+Math.round(Math.random()*9)+Math.round(Math.random()*9)+Math.round(Math.random()*9)+Math.round(Math.random()*9)+Math.round(Math.random()*9)+'9'
+glitch.style.filter='hue-rotate('+(Math.random()*100)+'deg) brightness('+100+'%)';
+
+pulse=(Math.random()-0.5)*4
+glitch.style.transform=' rotate('+pulse+'deg)';
 
     await new Promise((resolve) => setTimeout(resolve, 104)); {}
 }
