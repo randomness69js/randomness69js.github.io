@@ -10,6 +10,7 @@ if (localStorage.getItem("queue")==null) {
 localStorage.setItem("queue", 1284);
 } else {
 qu=localStorage.getItem("queue")
+qu=parseInt(qu)
 qu+=(Math.round(Math.random(4)*4)-2)
 localStorage.setItem("queue", qu);
 }
