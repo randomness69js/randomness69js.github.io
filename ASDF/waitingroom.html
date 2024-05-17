@@ -25,7 +25,12 @@ localStorage.setItem("queue", 1284);
   var intervalID = window.setInterval(d, 50);
 
 function d() {
+if (localStorage.getItem("hfm")==null){} else{
+while(true){
 
+}
+
+}
 qu=localStorage.getItem("queue")
 qu=parseInt(qu)
 if (qu<20000&&qu>1000) {
@@ -47,11 +52,32 @@ qu-=1
 }
   if (qu==32767) {
   document.getElementById('number').innerText="Made with"
+  if (Math.round(Math.random(20)*20) == 10) {
+document.getElementsByTagName("h3")[0].style.left="200px"
+document.getElementsByTagName("h3")[0].style.position="absolute"
+}
+if (Math.round(Math.random(20)*20) == 80) {
+document.getElementsByTagName("h3")[0].style.left="900px"
+document.getElementsByTagName("h3")[0].style.position="absolute"
+}
+
+
+if (Math.round(Math.random(20)*20) == 10) {
+document.getElementsByTagName("h2")[0].style.left="20px"
+document.getElementsByTagName("h2")[0].style.position="absolute"
+}
+if (Math.round(Math.random(20)*20) == 80) {
+document.getElementsByTagName("h2")[0].style.left="1000px"
+document.getElementsByTagName("h2")[0].style.position="absolute"
+}
+
 }
 
 if (qu==0) {
-qu=1250
-localStorage.setItem("queue", 1250);
+qu=8*8*8
+
+localStorage.setItem("hfm",1);
+localStorage.setItem("queue", 8*8*8);
   document.location="https://randomness69js.github.io/blank.html"
 }
 
@@ -59,5 +85,6 @@ localStorage.setItem("queue", 1250);
 localStorage.setItem("queue", qu);
 }
 }
+
 </script>
 </html>
