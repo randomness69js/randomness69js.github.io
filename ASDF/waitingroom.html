@@ -30,9 +30,10 @@ qu-=1
 if (qu==0) {
 alert("You won")
 }
+
+  document.getElementById('number').innerText=localStorage.getItem("queue");
 localStorage.setItem("queue", qu);
 }
 }
-  document.getElementById('number').innerText=localStorage.getItem("queue");
 </script>
 </html>
