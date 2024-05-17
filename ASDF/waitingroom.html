@@ -32,13 +32,14 @@ qu-=(Math.round(Math.random(3)*3))
 if (qu<=200&&qu>0) {
 qu-=1
 }
+  if (qu==32767) {
+  document.getElementById('number').innerText="Made with"
+}
+
 if (qu==0) {
 qu-32767
 localStorage.setItem("queue", qu);
   document.location="https://randomness69js.github.io/blank.html"
-}
-if (qu==32767) {
-  document.getElementById('number').innerText="Made with"
 }
 
   document.getElementById('number').innerText=localStorage.getItem("queue");
