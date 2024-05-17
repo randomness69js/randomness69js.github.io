@@ -25,12 +25,7 @@ localStorage.setItem("queue", 1284);
   var intervalID = window.setInterval(d, 50);
 
 function d() {
-if (localStorage.getItem("hfm")==null){} else{
-while(true){
 
-}
-
-}
 qu=localStorage.getItem("queue")
 qu=parseInt(qu)
 if (qu<20000&&qu>1000) {
@@ -50,8 +45,11 @@ qu-=(Math.round(Math.random(3)*3))
 if (qu<=200&&qu>0) {
 qu-=1
 }
-  if (qu==32767) {
-  document.getElementById('number').innerText="Made with"
+if (localStorage.getItem("hfm")==null){} else{
+
+
+
+  document.getElementById('number').innerText="Error"
   if (Math.round(Math.random(20)*20) == 10) {
 document.getElementsByTagName("h3")[0].style.left="200px"
 document.getElementsByTagName("h3")[0].style.position="absolute"
