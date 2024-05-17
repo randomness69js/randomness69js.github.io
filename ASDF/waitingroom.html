@@ -9,7 +9,9 @@
 if (localStorage.getItem("queue")==null) {
 localStorage.setItem("queue", 1284);
 } else {
-localStorage.setItem("queue", 1283);
+qu=localStorage.getItem("queue")
+qu+=(Math.round(Math.random(4)*4)-2)
+localStorage.setItem("queue", qu);
 }
   document.getElementById('number').innerText=localStorage.getItem("queue");
 </script>
