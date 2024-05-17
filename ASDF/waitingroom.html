@@ -11,7 +11,21 @@ localStorage.setItem("queue", 1284);
 } else {
 qu=localStorage.getItem("queue")
 qu=parseInt(qu)
+if (qu<1300&&qu>1000) {
 qu+=(Math.round(Math.random(2)*2)-1)
+}
+if (qu<1000&&qu>800) {
+qu+=(Math.round(Math.random(2)*2)-3)
+}
+if (qu<800&&qu>200) {
+qu-=(Math.round(Math.random(3)*3))
+}
+if (qu<200&&qu>0) {
+qu-=1
+}
+if (qu==0) {
+alert("You won")
+}
 localStorage.setItem("queue", qu);
 }
   document.getElementById('number').innerText=localStorage.getItem("queue");
