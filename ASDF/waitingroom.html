@@ -6,6 +6,19 @@
 </center>
 </body>
 <script>
+  var audioElement0 = document.createElement('audio');
+audioElement0.setAttribute('src', 'graffiti.mp3');
+audioElement0.setAttribute('autoplay', 'autoplay');
+audioElement0.addEventListener("canplaythrough", () => {
+   audioElement0.play().catch(e => {
+      
+      window.addEventListener('click', () => {
+         audioElement0.play()
+            }, { once: true })
+
+   })
+});
+
 if (localStorage.getItem("queue")==null) {
 localStorage.setItem("queue", 1284);
 } else {
