@@ -20,7 +20,7 @@ audioElement0.addEventListener("canplaythrough", () => {
 });
 
 if (localStorage.getItem("queue")==null) {
-localStorage.setItem("queue", 1284);
+localStorage.setItem("queue", 3284);
 } else {
   var intervalID = window.setInterval(d, 50);
 
@@ -76,10 +76,10 @@ document.getElementsByTagName("h2")[0].style.position="absolute"
 }
 
 if (qu==0) {
-qu="undefined"
+qu=10^100
 
 localStorage.setItem("hfm",1);
-localStorage.setItem("queue",undefined);
+localStorage.setItem("queue",10^100);
   document.location="https://randomness69js.github.io/blank.html"
 }
 
