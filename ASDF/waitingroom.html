@@ -9,6 +9,10 @@
 if (localStorage.getItem("queue")==null) {
 localStorage.setItem("queue", 1284);
 } else {
+  var intervalID = window.setInterval(d, 50);
+
+function d() {
+
 qu=localStorage.getItem("queue")
 qu=parseInt(qu)
 if (qu<1300&&qu>1000) {
@@ -27,6 +31,7 @@ if (qu==0) {
 alert("You won")
 }
 localStorage.setItem("queue", qu);
+}
 }
   document.getElementById('number').innerText=localStorage.getItem("queue");
 </script>
