@@ -13,7 +13,7 @@ localStorage.setItem("queue", 864000);
   qu=localStorage.getItem("queue")
 qu=parseInt(qu)
   }
-  if (qu>863000){
+  if (qu>431500){
   var audioElement0 = document.createElement('audio');
 audioElement0.setAttribute('src', 'graffiti.mp3');
 audioElement0.setAttribute('autoplay', 'autoplay');
@@ -72,7 +72,7 @@ if (qu<124000 && qu>0){
 if (audioElement1==null){}else{audioElement1.pause();}
 
 var audioElement2 = document.createElement('audio');
-audioElement2.setAttribute('src', 'https://randomness69js.github.io/media/Amb1.wav');
+audioElement2.setAttribute('src', 'https://randomness69js.github.io/media/Amb2.wav');
 audioElement2.setAttribute('autoplay', 'autoplay');
 audioElement2.addEventListener("canplaythrough", () => {
    audioElement2.play().catch(e => {
@@ -83,7 +83,7 @@ audioElement2.addEventListener("canplaythrough", () => {
 
    })
 });
-audioElement1.addEventListener('ended', function() {
+audioElement2.addEventListener('ended', function() {
     this.currentTime = 2;
     this.play();
 }, false);
