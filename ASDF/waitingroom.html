@@ -64,7 +64,9 @@ audioElement1.addEventListener('ended', function() {
 }, false);
 }
 
-
+if (qu==124000){
+  location.reload();
+}
 if (qu<=124000 && fpda==0){
   fpda=1;if (audioElement1==null){}else{audioElement1.pause();}
 location.reload();
