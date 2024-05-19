@@ -65,9 +65,9 @@ audioElement1.addEventListener('ended', function() {
 }
 
 
-if (qu<124000 && fpda==0){fpda=1;if (audioElement1==null){}else{audioElement1.pause();}}
-if (qu<124000){audioElement1.pause();}
-if (qu<124000 && qu>0 && fpda==1){
+if (qu<=124000 && fpda==0){fpda=1;if (audioElement1==null){}else{audioElement1.pause();}}
+
+if (qu<=124000 && qu>0 && fpda==1){
 if (audioElement1==null){}else{audioElement1.pause();}
 fpda=2
 var audioElement2 = document.createElement('audio');
