@@ -18,7 +18,10 @@ audioElement0.addEventListener("canplaythrough", () => {
 
    })
 });
-
+audioElement0.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
 if (localStorage.getItem("queue")==null) {
 localStorage.setItem("queue", 864000);
 } else {
@@ -43,7 +46,10 @@ audioElement1.addEventListener("canplaythrough", () => {
 
    })
 });
-
+audioElement1.addEventListener('ended', function() {
+    this.currentTime = 2;
+    this.play();
+}, false);
 }
 document.getElementById('number').innerText=localStorage.getItem("queue");
 localStorage.setItem("queue", qu);
