@@ -7,6 +7,13 @@
 </body>
 <script>
   fpda=0
+  if (localStorage.getItem("queue")==null) {
+localStorage.setItem("queue", 864000);
+  } else {
+  qu=localStorage.getItem("queue")
+qu=parseInt(qu)
+  }
+  if (qu>863000){
   var audioElement0 = document.createElement('audio');
 audioElement0.setAttribute('src', 'graffiti.mp3');
 audioElement0.setAttribute('autoplay', 'autoplay');
@@ -19,6 +26,7 @@ audioElement0.addEventListener("canplaythrough", () => {
 
    })
 });
+  }
 audioElement0.addEventListener('ended', function() {
     this.currentTime = 0;
     this.play();
