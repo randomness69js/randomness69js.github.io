@@ -42,9 +42,9 @@ function d() {
 qu=localStorage.getItem("queue")
 qu=parseInt(qu)
 qu-=1
-if (qu<431500 && fpda==0 && qu>124000){
+if (qu<431500 && fpda==1 && qu>124000){
 if (audioElement0==null){}else{audioElement0.pause();}
-fpda=1
+fpda=2
 var audioElement1 = document.createElement('audio');
 audioElement1.setAttribute('src', 'https://randomness69js.github.io/media/Amb1.wav');
 audioElement1.setAttribute('autoplay', 'autoplay');
