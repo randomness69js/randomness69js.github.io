@@ -65,7 +65,7 @@ audioElement1.addEventListener('ended', function() {
 }
 
 
-if (qu<124000 && fpda==0){fpda=1}
+if (qu<124000 && fpda==0){fpda=1;if (audioElement1==null){}else{audioElement1.pause();}}
 
 
 
