@@ -26,11 +26,12 @@ audioElement0.addEventListener("canplaythrough", () => {
 
    })
 });
-  }
 audioElement0.addEventListener('ended', function() {
     this.currentTime = 0;
     this.play();
 }, false);
+  }
+
 if (localStorage.getItem("queue")==null) {
 localStorage.setItem("queue", 864000);
 } else {
