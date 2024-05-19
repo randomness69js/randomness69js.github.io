@@ -42,7 +42,7 @@ function d() {
 qu=localStorage.getItem("queue")
 qu=parseInt(qu)
 qu-=1
-if (qu<863000 && fpda==0 ){
+if (qu<431500 && fpda==0 && qu>124000){
 if (audioElement0==null){}else{audioElement0.pause();}
 fpda=1
 var audioElement1 = document.createElement('audio');
@@ -53,6 +53,32 @@ audioElement1.addEventListener("canplaythrough", () => {
       
       window.addEventListener('click', () => {
          audioElement1.play()
+            }, { once: true })
+
+   })
+});
+audioElement1.addEventListener('ended', function() {
+    this.currentTime = 2;
+    this.play();
+}, false);
+}
+
+
+
+
+
+
+if (qu<124000 && qu>124000){
+if (audioElement1==null){}else{audioElement1.pause();}
+
+var audioElement2 = document.createElement('audio');
+audioElement2.setAttribute('src', 'https://randomness69js.github.io/media/Amb1.wav');
+audioElement2.setAttribute('autoplay', 'autoplay');
+audioElement2.addEventListener("canplaythrough", () => {
+   audioElement2.play().catch(e => {
+      
+      window.addEventListener('click', () => {
+         audioElement2.play()
             }, { once: true })
 
    })
