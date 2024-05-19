@@ -44,6 +44,7 @@ qu=localStorage.getItem("queue")
 qu=parseInt(qu)
 if (qu==124000){
   location.reload();
+  localStorage.setItem("queue", qu);
 } else {
 
 }
@@ -72,7 +73,7 @@ audioElement1.addEventListener('ended', function() {
 
 if (qu<=124000 && fpda==0){
   fpda=1;if (audioElement1==null){}else{audioElement1.pause();}
-location.reload();
+
 }
 
 if (qu<=124000 && qu>0 && fpda==1){
