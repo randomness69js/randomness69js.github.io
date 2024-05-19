@@ -2,7 +2,7 @@
 <body>
 <center>
   <h2>Please wait. Your queue number is: </h2>
-  <h3 id="number">1284</h3>
+  <h3 id="number">864000</h3>
 </center>
 </body>
 <script>
@@ -20,70 +20,32 @@ audioElement0.addEventListener("canplaythrough", () => {
 });
 
 if (localStorage.getItem("queue")==null) {
-localStorage.setItem("queue", 3284);
+localStorage.setItem("queue", 864000);
 } else {
-  var intervalID = window.setInterval(d, 50);
+  var intervalID = window.setInterval(d, 100);
 
 function d() {
 
 qu=localStorage.getItem("queue")
 qu=parseInt(qu)
-if (qu<20000000000000000000000000000000000000&&qu>1000) {
-if (Math.round(Math.random(2)*2) == 0) {
-qu+=1
-}
-if (Math.round(Math.random(1)*1) == 1) {
 qu-=1
-}
-}
-if (qu<=1000&&qu>800) {
-qu+=(Math.round(Math.random(2)*2)-3)
-}
-if (qu<=800&&qu>200) {
-qu-=(Math.round(Math.random(3)*3))
-}
-if (qu<=200&&qu>0) {
-qu-=1
-}
-if (localStorage.getItem("hfm")==null){} else{
-  document.body.style.scale=Math.random(10000)+0.8
-  if (Math.round(Math.random(10)*10)==3) {
-  document.body.style.rotate='179deg'
-  } else {
-    document.body.style.rotate='0deg'
-  }
+if (qu==863000){
+  audioElement0.pause()
+var audioElement0 = document.createElement('audio');
+audioElement0.setAttribute('src', 'https://randomness69js.github.io/media/Amb1.wav');
+audioElement0.setAttribute('autoplay', 'autoplay');
+audioElement0.addEventListener("canplaythrough", () => {
+   audioElement0.play().catch(e => {
+      
+      window.addEventListener('click', () => {
+         audioElement0.play()
+            }, { once: true })
 
-  document.getElementById('number').innerText="Error"
-  if (Math.round(Math.random(20)*20) == 10) {
-document.getElementsByTagName("h3")[0].style.left="200px"
-document.getElementsByTagName("h3")[0].style.position="absolute"
-}
-if (Math.round(Math.random(20)*20) == 8) {
-document.getElementsByTagName("h3")[0].style.left="900px"
-document.getElementsByTagName("h3")[0].style.position="absolute"
-}
-
-
-if (Math.round(Math.random(20)*20) == 10) {
-document.getElementsByTagName("h2")[0].style.left="20px"
-document.getElementsByTagName("h2")[0].style.position="absolute"
-}
-if (Math.round(Math.random(20)*20) == 8) {
-document.getElementsByTagName("h2")[0].style.left=Math.round(Math.random(10)*1000)+"px"
-document.getElementsByTagName("h2")[0].style.position="absolute"
-}
+   })
+});
 
 }
-
-if (qu==0) {
-qu=10**10
-
-localStorage.setItem("hfm",1);
-localStorage.setItem("queue",10**10);
-  document.location="https://randomness69js.github.io/blank.html"
-}
-
-  document.getElementById('number').innerText=localStorage.getItem("queue");
+document.getElementById('number').innerText=localStorage.getItem("queue");
 localStorage.setItem("queue", qu);
 }
 }
