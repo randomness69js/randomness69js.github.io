@@ -7,7 +7,7 @@
 </body>
 <script>
   fpda=0
-  if (audioElement1==null){fpda=1}
+  if (audioElement1==null&&audioElement0==null){fpda=1}
   if (localStorage.getItem("queue")==null) {
 localStorage.setItem("queue", 864000);
   } else {
