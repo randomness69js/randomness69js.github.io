@@ -16,44 +16,56 @@ function err() {
 i=Math.round(Math.random(11)*11)
   if (i==0) {
 document.getElementById("status").innerText="500 Internal server error"
+document.title="500 Internal server error"
   }
     if (i==1) {
 document.getElementById("status").innerText="404 Not Found"
+document.title="404 Not Found"
   }
     if (i==2) {
 document.getElementById("status").innerText="413 Request Entity Too Large"
+document.title="413 Request Entity Too Large"
   }
       if (i==3) {
 document.getElementById("status").innerText="502 Bad Gateway"
+document.title="502 Bad Gateway"
   }
 
         if (i==4) {
 document.getElementById("status").innerText="403 Forbidden"
+document.title="403 Forbidden"
   }
 
           if (i==5) {
 document.getElementById("status").innerText="503 Service Temporarily Unavailable"
+document.title="503 Service Temporarily Unavailable"
   }
 
             if (i==6) {
 document.getElementById("status").innerText="401 Authorization Required"
+document.title="401 Authorization Required"
   }
 
               if (i==7) {
 document.getElementById("status").innerText="405 Not allowed"
+document.title="405 Not allowed"
   }
 
                 if (i==8) {
 document.getElementById("status").innerText="400 Bad Request"
+document.title="400 Bad Request"
   }
    if (i==9) {
 document.getElementById("status").innerText="451 Unavailable For Legal Reasons"
+document.title="451 Unavailable For Legal Reasons"
    }
 if (i==10) {
 document.getElementById("status").innerText="429 Too Many Requests"
+document.title="429 Too Many Requests"
 }
 if (i==11) {
 document.getElementById("status").innerText="426 Upgrade Required"
+document.title="426 Upgrade Required"
 }
 }
   err()
