@@ -13,7 +13,7 @@
 function err() {
   // Your code here
 
-i=Math.round(Math.random(10)*10)
+i=Math.round(Math.random(11)*11)
   if (i==0) {
 document.getElementById("status").innerText="500 Internal server error"
   }
@@ -46,6 +46,12 @@ document.getElementById("status").innerText="405 Not allowed"
                 if (i==8) {
 document.getElementById("status").innerText="400 Bad Request"
   }
+   if (i==9) {
+document.getElementById("status").innerText="451 Unavailable For Legal Reasons"
+   }
+if (i==10) {
+document.getElementById("status").innerText="429 Too Many Requests"
+  
 }
   err()
 </script>
