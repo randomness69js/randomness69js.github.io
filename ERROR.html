@@ -6,8 +6,19 @@
 </body>
 <head>
 <script>
-document.getElementById("status").innerText="500 - Internet server error"
-
+i=Math.round(Math.random(10)*10)
+  if (i==0) {
+document.getElementById("status").innerText="500 Internal server error"
+  }
+    if (i==1) {
+document.getElementById("status").innerText="404 Not found"
+  }
+    if (i==2) {
+document.getElementById("status").innerText="413 Request Entity Too Large"
+  }
+      if (i==3) {
+document.getElementById("status").innerText="502 Bad Gateway"
+  }
 </script>
 </head>
 </html>
