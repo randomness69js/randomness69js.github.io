@@ -1,7 +1,25 @@
 <html>
 <body>
-  <input id="code"></input> <button id="go">Go</button>
+  <input id="code"></input> <button id="go" onclick="V()" >Go</button>
 </body>
 
-  
+function V() {
+function hash(string) {
+  const utf8 = new TextEncoder().encode(string);
+  return crypto.subtle.digest('SHA-256', utf8).then((hashBuffer) => {
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray
+      .map((bytes) => bytes.toString(16).padStart(2, '0'))
+      .join('');
+    return hashHex;
+  });
+}
+
+j=document.getElementsById("code").value
+
+hash(j).then((hex)=>i=hex);
+if (i=="03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4") {
+alert("Yes but actually no")
+}
+}
 </html>
