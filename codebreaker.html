@@ -5,11 +5,11 @@
 <script>
 
   function ruhroh() {
-stra=document.getElementById("go").innerText
+stra=document.getElementById("go").innerHTML
 strb="Not a chance"
 rando=Math.round(Math.random(12)*12)
 stra=stra.replace(stra[rando],strb[rando])
-document.getElementById("go").innerText=stra
+document.getElementById("go").innerHTML=stra
 }
 function V() {
 t=0
