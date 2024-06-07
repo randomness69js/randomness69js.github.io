@@ -4,12 +4,19 @@
 </body>
 <script>
 
-  function ruhroh() {
+function ruhroh() {
+
 stra=document.getElementById("go").innerHTML
+if (stra=="Not a chance"){
+}else {
+setTimeout(ruhroh, 10);
+}
 strb="Not a chance"
 rando=Math.round(Math.random(12)*12)
 stra=stra.replace(stra[rando],strb[rando])
 document.getElementById("go").innerHTML=stra
+
+    
 }
 function V() {
 t=0
