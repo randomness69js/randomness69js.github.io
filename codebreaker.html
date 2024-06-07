@@ -1,8 +1,15 @@
 <html>
 <body>
-  <input id="code"></input> <button id="go" onclick="V()" >Go</button>
+  <input id="code"></input> <button id="go" onclick="V()" >Go          </button>
 </body>
 <script>
+
+  function ruhroh() {
+stra=document.getElementById("go").innerText
+strb="Not a chance"
+rando=Math.round(Math.random(12)*12)
+stra=stra.replace(stra[rando],strb[rando])
+}
 function V() {
 t=0
 function sleep(ms) {
