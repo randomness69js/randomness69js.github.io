@@ -13,7 +13,7 @@
 function err() {
   // Your code here
 
-i=Math.round(Math.random(11)*11)
+i=Math.round(Math.random(12)*12)
   if (i==0) {
 document.getElementById("status").innerText="500 Internal Server Error"
 document.title="500 Internal Server Error"
@@ -66,6 +66,10 @@ document.title="429 Too Many Requests"
 if (i==11) {
 document.getElementById("status").innerText="426 Upgrade Required"
 document.title="426 Upgrade Required"
+}
+  if (i==12) {
+document.getElementById("status").innerText="504 Gateway Timeout"
+document.title="504 Gateway Timeout"
 }
 }
   err()
