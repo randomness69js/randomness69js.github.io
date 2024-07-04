@@ -52,8 +52,11 @@ console.warn("Deprecated API for given entry type.")
   }
 
             if (i==6) {
+a=document.createElement("input");document.getElementsByTagName("body")[0].appendChild(a);a.hidden=true
 document.getElementById("status").innerText="401 Authorization Required"
 document.title="401 Authorization Required"
+
+a.remove()
   }
 
               if (i==7) {
