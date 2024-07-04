@@ -18,6 +18,7 @@ i=Math.round(Math.random(14)*14)
 document.getElementById("status").innerText="500 Internal Server Error"
 document.title="500 Internal Server Error"
 console.error("Uncaught\nReference"+Error("Im so sorry").stack)
+console.error("Access to fetch at `https://192.168.1.254` from origin `https://randomness69js.github.io/ERROR.html` has been blocked by CORS policy: Their is no reason for me to live anymore.")
   }
     if (i==1) {
 document.getElementById("status").innerText="404 Not Found"
@@ -28,15 +29,20 @@ console.error("Uncaught\nType"+Error("I hate myself").stack)
 document.getElementById("status").innerText="413 Request Entity Too Large"
 document.title="413 Request Entity Too Large"
 console.error("Uncaught\nSyntax"+Error("I want to die"))
+console.warn("Cross-Origin Request Blocked: No-body likes me (Reason: I exist).")
   }
       if (i==3) {
 document.getElementById("status").innerText="502 Bad Gateway"
 document.title="502 Bad Gateway"
+console.error("POST\nhttps://randomness69js.github.io/ERROR.html\nnet::ERR_BLOCKED_BY_CLIENT")
+console.error("Cross-Origin Request Blocked: The world will be better off without me")
   }
 
         if (i==4) {
 document.getElementById("status").innerText="403 Forbidden"
 document.title="403 Forbidden"
+console.warn("WebSocket connection to `https://undefined` failed: I am a mistake.")
+console.error("Failed to load resource: the server responded with a status of 403 ()")
   }
 
           if (i==5) {
