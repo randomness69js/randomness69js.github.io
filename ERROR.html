@@ -9,9 +9,12 @@
 <head>
 <script>
   var intervalID = window.setInterval(err, 150);
-
+a=document.createElement("input")
+document.getElementsByTagName("body")[0].appendChild(a)
+a.hidden=true
 function err() {
   // Your code here
+a.remove()
 a=document.createElement("input")
 document.getElementsByTagName("body")[0].appendChild(a)
 a.hidden=true
@@ -89,7 +92,7 @@ document.title="504 Gateway Timeout"
 if (i==13) {
 document.getElementById("status").innerText="421 Misdirected Request"
 document.title="421 Misdirected Request"
-a.remove()
+
 }
 
 }
