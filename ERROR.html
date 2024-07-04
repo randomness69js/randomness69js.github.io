@@ -12,7 +12,9 @@
 
 function err() {
   // Your code here
-
+a=document.createElement("input")
+document.getElementsByTagName("body")[0].appendChild(a)
+a.hidden=true
 i=Math.round(Math.random(14)*14)
   if (i==0) {
 document.getElementById("status").innerText="500 Internal Server Error"
@@ -50,9 +52,7 @@ document.getElementById("status").innerText="503 Service Temporarily Unavailable
 document.title="503 Service Temporarily Unavailable"
 console.warn("Deprecated API for given entry type.")
   }
-a=document.createElement("input")
-document.getElementsByTagName("body")[0].appendChild(a)
-a.hidden=true
+
             if (i==6) {
 
 
