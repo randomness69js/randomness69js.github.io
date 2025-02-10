@@ -18,7 +18,7 @@ a.remove()
 a=document.createElement("input")
 document.getElementsByTagName("body")[0].appendChild(a)
 a.hidden=true
-i=Math.round(Math.random(14)*14)
+i=Math.round(Math.random(17)*17)
   if (i==0) {
 document.getElementById("status").innerText="500 Internal Server Error"
 document.title="500 Internal Server Error"
@@ -94,6 +94,18 @@ document.getElementById("status").innerText="421 Misdirected Request"
 document.title="421 Misdirected Request"
 
 }
+if (i==14) {
+document.getElementById("status").innerText="402 Payment Required"
+document.title="402 Payment Required"
+}
+if (i==15) {
+document.getElementById("status").innerText="408 Request Timeout"
+document.title="408 Request Timeout"
+}
+ if (i==16) {
+document.getElementById("status").innerText="414 Request-URI Too Large"
+document.title="414 Request-URI Too Large"
+} 
 
 }
   err()
