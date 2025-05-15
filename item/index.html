@@ -16,12 +16,13 @@
 <body>
  <video src="https://randomness69js.github.io/item/NewItem.mp4" id="video" type="video/mp4" autoplay> </video>
 <script>
-function ref(){ 
- return document.referrer;
-} 
-alert(ref());
-if (!ref()){
- document.location="/"; 
+const checkaccess=async()=>{
+await delay(2500);
+ ref=document.referrer;
+ alert(ref());
+ if (!ref()){
+  document.location="/"; 
+ }
 }
 
 video=document.getElementById("video")
