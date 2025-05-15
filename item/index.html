@@ -19,7 +19,7 @@
 const delay=ms=>new Promise(res => setTimeout(res, ms));
 const checkaccess=async()=>{
 await delay(2000);
- ref=document.referrer.contains("info");
+ ref=document.referrer.includes("info");
  if (!ref){
   document.location="/"; 
  }
