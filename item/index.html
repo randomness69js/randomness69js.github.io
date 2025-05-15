@@ -16,6 +16,9 @@
 <body>
  <video src="https://randomness69js.github.io/item/NewItem.mp4" id="video" type="video/mp4" autoplay> </video>
 <script>
+if (!document.referrer=="https://randomness69js.github.io/info/") {
+ document.location="/";
+}
 video=document.getElementById("video")
 video.addEventListener("ended", (event) => {
   localStorage.setItem("hasRadio", true);
