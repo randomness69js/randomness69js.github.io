@@ -189,6 +189,7 @@
    </div> </center>
    <script>
    //Splash text
+   async function radio() {
    if (localStorage.getItem("hasRadio")=='true'){
     const rescall=await fetch("https://ipwho.is/",{method: "GET", headers: { "Content-Type": "application/json",}, body: JSON.stringify()})
     const resjson=rescall.json()
@@ -205,7 +206,7 @@
       console.log(currenttemp);
       document.getElementById("version").innerText=rescity.toString()+" temperature is "+currenttemp.toString();
       document.getElementById("version").style.color='red';
-   })})}
+   })})}}
    if (localStorage.getItem("hasRadio")==null){
     localStorage.setItem("hasRadio", false);  
    }
@@ -280,7 +281,7 @@
      
      
      
-     
+   radio();
    console.log("test")
    </script>
   </body>
