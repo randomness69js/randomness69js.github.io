@@ -189,6 +189,23 @@
    </div> </center>
    <script>
    //Splash text
+   if (localStorage.getItem("hasRadio")=='true'){
+    const rescall=await fetch("https://ipwho.is/",{method: "GET", headers: { "Content-Type": "application/json",}, body: JSON.stringify()})
+    const resjson=rescall.json()
+    resjson.then(async(result)=>{
+     resdata=result;
+     rescity=resdata.city.toString();
+     reslong=resdata.longitude.toString();
+     reslat=resdata.latitude.toString();
+     weatherurl="https://api.open-meteo.com/v1/forecast?latitude="+reslat+"&longitude="+reslong+"&hourly=temperature_2m&current=temperature_2m&timezone=auto&forecast_days=1&temperature_unit=fahrenheit&forecast_hours=6&temporal_resolution=hourly_3";
+     const weathcall=await fetch(weatherurl.toString(),{method: "GET", headers: { "Content-Type": "application/json",}, body: JSON.stringify()});
+     const weathjson=weathcall.json();weathjson.then((result)=>{
+      weathdata=result;
+      currenttemp=weathdata.current.temperature_2m.toString()+"F°";
+      console.log(currenttemp);
+      document.getElementById("version").innerText=rescity.toString()+" temperature is "+currenttemp.toString();
+      document.getElementById("version").style.color='red';
+   })})}
    if (localStorage.getItem("hasRadio")==null){
     localStorage.setItem("hasRadio", false);  
    }
