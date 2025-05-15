@@ -189,6 +189,9 @@
    </div> </center>
    <script>
    //Splash text
+   if (localStorage.getItem("hasRadio")==null){
+    localStorage.setItem("hasRadio", false);  
+   }
    var splashtext = document.getElementById("version")
    var randomvalue=Math.round(Math.random(21)*21)
    if (randomvalue==0) {
