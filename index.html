@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+  <title> Randomness69 World </title>
+  <head>
+   <style>
+     /* title and things and shit*/
+     html {
+      height: 100%;
+     }
+     body {
+      background-image: repeating-linear-gradient(white, lightgrey 10%, white 40%);
+      background-repeat: no-repeat;
+      height: 100%;
+      margin: 0;
+     }
+     
+     @font-face {
+      font-family: sillymariofont;
+      src: url(SuperMario256.ttf);
+     }
+     @font-face {
+      font-family: sillymariofont2;
+      src: url(SuperMarioBeta256.ttf);
+     }
+    
+
+     #smg200icon {
+      margin: 0;
+     }
+     
+     #toptitle {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+     -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+     }
+     
+     #title {
+      font-family: sillymariofont;
+      font-size: 50px;
+      color: white;
+      margin-top: 0px;
+      margin-bottom: -30px;
+        -webkit-text-stroke: 3px black;
+     }
+     
+     #version {
+      color: yellow;
+      font-family: sillymariofont;
+      font-size: 30px;
+      margin-bottom: -10px;
+      -webkit-text-stroke: 3px orange;
+     }
+   
+  
+     /* teh buttonz */
+     @property --grad1 {
+      syntax: '<color>';
+      initial-value: white;
+      inherits: false;
+     }
+     @property --grad2 {
+      syntax: '<color>';
+      initial-value: grey;
+      inherits: false;
+     }
+
+     #buttons {
+      font-size:10px;
+      position: absolute;
+      top: 51%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      transition-duration 1s;
+     }
+     #morebuttons {
+      font-size:10px;
+      position: absolute;
+      top: 56%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      transition-duration 1s;
+     }
+     #button1 {
+      position: relative;
+      top: 0;
+      left: 0;
+      --grad1: white;
+      --grad2: lightgrey;
+      background: linear-gradient(var(--grad1), var(--grad2));
+      color: white;
+      font-family: sillymariofont2;
+       -webkit-text-stroke: 1.5px black;
+      font-size: 20px;
+      text-align: center;
+      padding: 7px 32px;
+      border-radius: 14px;
+      transition: --grad1 0.1s, --grad2 0.2s;
+     }
+     #button1:hover {
+      --grad1: lightgrey;
+      --grad2: grey;
+      position: relative;
+      top: 0;
+      left: 0;
+     }
+     
+     
+     #button2 {
+      position: relative;
+      top: 0;
+      left: 0;
+      --grad1: white;
+      --grad2: lightgrey;
+      background: linear-gradient(var(--grad1), var(--grad2));
+      color: white;
+      font-family: sillymariofont2;
+       -webkit-text-stroke: 1.5px black;
+      font-size: 20px;
+      text-align: center;
+      padding: 7px 32px;
+      border-radius: 14px;
+      transition: --grad1 0.1s, --grad2 0.2s;
+     }
+     #button2:hover {
+      --grad1: lightgrey;
+      --grad2: grey;
+      position: relative;
+      top: 0;
+      left: 0;
+     }
+     
+     
+     
+      
+     #button3 {
+      position: relative;
+      top: 0;
+      left: 0;
+      --grad1: white;
+      --grad2: lightgrey;
+      background: linear-gradient(var(--grad1), var(--grad2));
+      color: white;
+      font-family: sillymariofont2;
+       -webkit-text-stroke: 1.5px black;
+      font-size: 20px;
+      text-align: center;
+      padding: 7px 32px;
+      border-radius: 14px;
+      transition: --grad1 0.1s, --grad2 0.2s;
+     }
+     #button3:hover {
+      --grad1: lightgrey;
+      --grad2: grey;
+      position: relative;
+      top: 0;
+      left: 0;
+     }
+   </style>
+   
+   
+  </head>
+  <body>
+  <audio autoplay loop>
+   <source src="https://files.catbox.moe/bu8lfl.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+  </audio>
+   <div id="toptitle">
+    <center> <img id="smg200icon" src="smg200logo.png" width="400" height="210"></center>
+    <center> <p id="title">Randomness6956 world</p><center>
+    <p id="version">Welcome!</p>
+   </div>
+   <div id="buttons">
+    <a href="https://archive.org/details/randomness69-archives_20250503"> <button id="button1"> VIDEOS </button> <a>
+    <a href="https://smg200world.neocities.org/info/"> <button id="button2"> INFO </button> </a>
+    <a href="https://smg200world.neocities.org/game"><button id="button3"> GAMES </button> </a>
+   </div>
+   <center> <div id="morebuttons">
+    <img src="/buttons/button1.gif">
+    <a href="https://www.debian.org/"><img src="/buttons/button2.jpg"> </a>
+    <img src="/buttons/button3.gif"> 
+    <a href="https://www.w3schools.com/html/"><img src="/buttons/button4.gif"> </a>
+    <a href="https://neocities.org/"><img src="/buttons/button5.gif"> </a>
+    <a href="https://www.google.com/chrome/"><img src="/buttons/button6.gif"> </a>
+    <a href="https://discord.gg/2Pt8FZs2zM/"><img src="/buttons/button7.gif"> </a>
+   </div> </center>
+   <script>
+   //Splash text
+   var splashtext = document.getElementById("version")
+   var randomvalue=Math.round(Math.random(21)*21)
+   if (randomvalue==0) {
+    splashtext.innerText="i made tis website"
+   }
+   if (randomvalue==1) {
+    splashtext.innerText="lol"
+   }   
+   if (randomvalue==2) {
+    splashtext.innerText="Welcome to my world!"
+   }
+   if (randomvalue==3) {
+    splashtext.innerText="Cream of mushroom"
+   }
+   if (randomvalue==4) {
+    splashtext.innerText="Once a winner, always a winner."
+   }
+   if (randomvalue==5) {
+    splashtext.innerText="official home of smg200"
+   }
+   if (randomvalue==6) {
+    splashtext.innerText="YTP is dead."
+   }
+   if (randomvalue==7) {
+    splashtext.innerText="Please come to the castle."
+   }
+   if (randomvalue==8) {
+    splashtext.innerText="Makes your teeth turn grey!"
+   }
+   if (randomvalue==9) {
+    splashtext.innerText="Welcome!"
+   } 
+   if (randomvalue==10) {
+    splashtext.innerText="Dead end."
+   }
+   if (randomvalue==11) {
+    splashtext.innerText="c0debreaker"
+   }
+   if (randomvalue==12) {
+    splashtext.innerText="WHY ARE YOU BUYING CLOTHES AT THE SOUP STORE"
+   }
+   if (randomvalue==13) {
+    splashtext.innerText="I want you to keep your crummy dog off of my brand new carpet!"
+   }
+   if (randomvalue==14) {
+    splashtext.innerText="why do i feel so numb"
+   }
+   if (randomvalue==15) {
+    splashtext.innerText="I knew it. Your just another zombie."
+   }
+   if (randomvalue==16) {
+    splashtext.innerText="join my world. become insane."
+   }   
+   if (randomvalue==17) {
+    splashtext.innerText="gabario"
+   } 
+   if (randomvalue==18) {
+    splashtext.innerText="Day "+((Math.round(Math.random(6)*6))+1).toString()+" has started."
+   }
+   if (randomvalue==19) {
+    splashtext.innerText="Make sure to run a CHKDSK on it!"
+   }
+   if (randomvalue==20) {
+    splashtext.innerText="run away and hide"
+   }
+   if (randomvalue==21) {
+    splashtext.innerText="Refresh the page!"
+   }
+     
+     
+     
+     
+   console.log("test")
+   </script>
+  </body>
+</html>
