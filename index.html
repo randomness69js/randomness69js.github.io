@@ -278,6 +278,121 @@
    if (randomvalue==21) {
     splashtext.innerText="Refresh the page!"
    }
+
+//I would prefer if you didnt steal my code.
+//I would prefer if you didnt steal my code.
+//I would prefer if you didnt steal my code.
+
+     
+function critical() {
+for (var i=0; i < document.getElementsByTagName("img").length; i++){
+ document.getElementsByTagName("img")[i].style.perspective=(20+Math.round(Math.random()*100)).toString()+'px'
+ document.getElementsByTagName("img")[i].style.transform='rotateY('+(Math.round(Math.random()*360)).toString()+'deg)'
+ document.getElementsByTagName("img")[i].style.transform+='rotateX('+(Math.round(Math.random()*360)).toString()+'deg)'
+ document.getElementsByTagName("img")[i].style.transform+='rotateZ('+(Math.round(Math.random()*360)).toString()+'deg)'
+ document.getElementsByTagName("img")[i].style.width=(Math.round(Math.random()*300)-150).toString()+'%'
+ document.getElementsByTagName("img")[i].style.height=(Math.round(Math.random()*300)-150).toString()+'%'
+ document.getElementsByTagName("img")[i].style.filter="brightness("+Math.round((Math.random()*100))+"%)"
+ document.getElementsByTagName("img")[i].style.filter+="hue-rotate("+Math.round((Math.random()*360))+"deg)"
+ document.getElementsByTagName("img")[i].style.position="relative"
+ document.getElementsByTagName("img")[i].style.top=Math.round((Math.random()*350)-150).toString()+"px"
+ document.getElementsByTagName("img")[i].style.right=Math.round((Math.random()*3500)-1500).toString()+"px"
+}
+for (var i=0; i < document.getElementsByTagName("button").length; i++){
+ document.getElementsByTagName("button")[i].style.perspective=(20+Math.round(Math.random()*100)).toString()+'px'
+ document.getElementsByTagName("button")[i].style.transform='rotateY('+(Math.round(Math.random()*360)).toString()+'deg)'
+ document.getElementsByTagName("button")[i].style.transform+='rotateX('+(Math.round(Math.random()*360)).toString()+'deg)'
+ document.getElementsByTagName("button")[i].style.transform+='rotateZ('+(Math.round(Math.random()*360)).toString()+'deg)'
+ document.getElementsByTagName("button")[i].style.width=(Math.round(Math.random()*300)-150).toString()+'%'
+ document.getElementsByTagName("button")[i].style.height=(Math.round(Math.random()*300)-150).toString()+'%'
+ document.getElementsByTagName("button")[i].style.filter="brightness("+Math.round((Math.random()*100))+"%)"
+ document.getElementsByTagName("button")[i].style.filter+="hue-rotate("+Math.round((Math.random()*360))+"deg)"
+ document.getElementsByTagName("button")[i].style.position="relative"
+ document.getElementsByTagName("button")[i].style.top=Math.round((Math.random()*350)-150).toString()+"px"
+ document.getElementsByTagName("button")[i].style.backgroundImage="repeating-linear-gradient(#"+(Math.floor(Math.random()*16777215).toString(16))+", #"+(Math.floor(Math.random()*16777215).toString(16))+" "+Math.round(Math.random(100)*100).toString()+"%, #"+(Math.floor(Math.random()*16777215).toString(16))+" "+Math.round(Math.random(100)*100).toString()+"%)"
+ document.getElementsByTagName("button")[i].style.color="#"+(Math.floor(Math.random()*16777215).toString(16))
+ document.getElementsByTagName("button")[i].innerText=(Math.floor(Math.random()*1677768581231982763).toString(36))+(Math.floor(Math.random()*1677768581231982763).toString(36))
+ document.getElementsByTagName("button")[i].style.right=Math.round((Math.random()*1000)-500).toString()+"px"
+}
+for (var i=0; i < document.getElementsByTagName("p").length; i++){
+ document.getElementsByTagName("p")[i].style.perspective=(20+Math.round(Math.random()*100)).toString()+'px'
+ document.getElementsByTagName("p")[i].style.transform='rotateY('+(Math.round(Math.random()*360)).toString()+'deg)'
+ document.getElementsByTagName("p")[i].style.transform+='rotateX('+(Math.round(Math.random()*360)).toString()+'deg)'
+ document.getElementsByTagName("p")[i].style.transform+='rotateZ('+(Math.round(Math.random()*360)).toString()+'deg)'
+ document.getElementsByTagName("p")[i].style.width=(Math.round(Math.random()*300)-150).toString()+'%'
+ document.getElementsByTagName("p")[i].style.height=(Math.round(Math.random()*300)-150).toString()+'%'
+ document.getElementsByTagName("p")[i].style.filter="brightness("+Math.round((Math.random()*100))+"%)"
+ document.getElementsByTagName("p")[i].style.filter+="hue-rotate("+Math.round((Math.random()*360))+"deg)"
+ document.getElementsByTagName("p")[i].style.position="relative"
+ document.getElementsByTagName("p")[i].style.top=Math.round((Math.random()*1000)-500).toString()+"px"
+ document.getElementsByTagName("p")[i].style.color="#"+(Math.floor(Math.random()*16777215).toString(16))
+ document.getElementsByTagName("p")[i].innerText=atob((Math.floor(Math.random()*1677768581231982763).toString(36))+ (Math.floor(Math.random()*1677768581231982763).toString(36)))
+ document.getElementsByTagName("p")[i].style.right=Math.round((Math.random()*1000)-500).toString()+"px"
+}
+
+ document.getElementsByTagName("body")[0].style.backgroundImage="repeating-linear-gradient(#"+(Math.floor(Math.random()*16777215).toString(16))+", #"+(Math.floor(Math.random()*16777215).toString(16))+" "+Math.round(Math.random(100)*100).toString()+"%, #"+(Math.floor(Math.random()*16777215).toString(16))+" "+Math.round(Math.random(100)*100).toString()+"%)"
+ if (((Math.round(Math.random(10)*10))==7)){
+ document.getElementsByTagName("body")[0].style.backgroundImage="url('https://randomness69js.github.io/buttons/offline.PNG')"
+document.getElementsByTagName("body")[0].style.backgroundRepeat="no-repeat"
+ document.getElementsByTagName("body")[0].style.backgroundAttachment="fixed"
+ document.getElementsByTagName("body")[0].style.backgroundSize="cover"
+}
+if (Math.round(Math.random(1000)*1000)==5){
+ let Node1 = document.createElement('button')
+ Node1.innerText="BUTTON"
+ Node1.style.position = 'fixed'
+ Node1.style.top = Math.random() * window.innerWidth + 'px';
+ Node1.style.left = Math.random() * window.innerWidth + 'px';
+ Node1.id="button1"
+ document.body.appendChild(Node1)
+}
+ let AudNode=document.createElement('audio')
+ AudNode.src="https://files.catbox.moe/rfi93n.mp3"
+ AudNode.id="skeriaudio"
+ document.body.appendChild(AudNode)
+ var AudNodeElm = document.getElementById("skeriaudio");
+ AudNodeElm.play()
+ AudNodeElm.onended = function() {
+ document.location="https://randomness69js.github.io/ICANSEEYOU"
+}
+nks=""
+ks=[]
+for (var i=32; i<400; i++){
+ks[i-32]=String.fromCharCode((i))
+}
+if (Math.round(Math.random(10)*10)==4) {
+ for (var i2 = 0; i2 < 10; i2++ ) {
+ var c = document.getElementById("canvas");
+ var ctx = c.getContext("2d");
+ ctx.fillStyle="#"+(Math.floor(Math.random()*16777215).toString(16))
+ ctx.fillRect(Math.random()*2000,Math.random()*2000,Math.random()*100,Math.random()*100)
+ }
+}
+for (var i=0; i<Math.round(Math.random(70)*70);i++) {
+ nks+=ks[Math.round(Math.random((400-32))*(400-32))]
+}
+document.title=nks
+
+}
+
+function criticalloop() {
+  critical()
+}
+
+function startscare() {
+ let node2=document.createElement('canvas')
+ node2.id='canvas'
+ node2.width=window.innerWidth.toString()
+ node2.height=window.innerHeight.toString()
+ node2.style.position= 'fixed'
+ node2.style.top='0px'
+ node2.style.left='0px'
+ document.body.appendChild(node2)
+ setInterval(criticalloop, 100);
+}
+if (Math.round(Math.random(15)*15)==4){
+ startscare()
+}
      
      
      
