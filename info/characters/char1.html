@@ -71,39 +71,71 @@
   </div>
  </div>
 <script>
+var detstage=0;
 function det1() {
- document.getElementsByTagName("header")[0].innerHTML=document.getElementsByTagName("header")[0].innerHTML.replaceAll("center","div")
- document.getElementsByTagName("style")[0].innerHTML=document.getElementsByTagName("style")[0].innerHTML.replaceAll("-webkit-text-stroke-width: 1px;","")
- document.getElementsByTagName("style")[0].innerHTML=document.getElementsByTagName("style")[0].innerHTML.replaceAll("-webkit-text-stroke-width: 1.5px;","")
- document.getElementsByTagName("style")[0].innerHTML=document.getElementsByTagName("style")[0].innerHTML.replace("border-radius: 8px;","")
- document.getElementsByTagName("style")[0].innerHTML=document.getElementsByTagName("style")[0].innerHTML.replace("padding: 20px;","")
- cv1=document.getElementsByTagName("style")[0].innerHTML.search("#textcontainer")
- cv2=document.getElementsByTagName("style")[0].innerHTML.search("max-width: 1500px;\n }")
- cv3=cv2=document.getElementsByTagName("style")[0].innerHTML.toString()
- cv4=cv3.split("#textcontainer")
- cv5=cv3.split("max-width: 1500px;\n }")
- document.getElementsByTagName("style")[0].innerHTML=cv4[0].toString()+cv5[1].toString()
- document.getElementsByTagName("style")[0].innerHTML=document.getElementsByTagName("style")[0].innerHTML.replaceAll("background: radial-gradient(circle, #121212, #212121, #121212);","background: black")
- document.getElementsByTagName("style")[0].innerHTML=document.getElementsByTagName("style")[0].innerHTML.replaceAll("linear-gradient(0deg, rgba(5, 5, 5, 1), rgba(45, 45, 45, 1));","darkgrey;") 
- document.getElementsByTagName("h4")[0].innerHTML="500 years ago, he came to a foolish place. It's not know how it is why. <br> Nothing happened into our world because it wasn't enough about 20 years ago and the poor weather. These events start now."
- document.getElementsByTagName("h4")[1].innerHTML="1. The cyber network network was fulfilled with a data violation caused by SMG200."
- document.getElementsByTagName("h4")[2].innerHTML="2. The Kingdom of Mushrooms was evacuated because he put on the other world. (Can occur with SMG200)"
- document.getElementsByTagName("h4")[3].innerHTML="3. A friend of SMG200 invite the man and make a huge fire and make mistakes (associated with SMG200)"
- document.getElementsByTagName("h4")[4].innerHTML="4. The universe is almost dead while playing Minecraft for his 100 customers for special customers."
- document.getElementsByTagName("h4")[5].innerHTML="5. SMG200 invited everyone to the party that caused traffic in the mushrooms."
- document.getElementsByTagName("h4")[6].innerHTML="6. SMG200 accuses others to steal the fields and cause murder."
- document.getElementsByTagName("h4")[7].innerHTML="7. SMG200 was banned from the crash that created rolls with about $ 20 in October."
- document.getElementsByTagName("h4")[8].innerHTML="8. SMG200 put time in the climate in seven. Details of this event are not known if journalists have been injured during the show."
- document.getElementsByTagName("h4")[9].innerHTML="If you get SMG200, be careful. To stay in."
- document.getElementsByTagName("h1")[0].innerText="Information about the character"
- document.getElementsByTagName("h1")[2].innerText="To catch new"
- document.getElementsByTagName("h1")[3].innerText="Work"
- document.getElementsByTagName("h1")[4].innerText="Handkeeper."
- document.getElementsByTagName("img")[1].src="https://randomness69js.github.io/info/characterphotos/CharSMG201.jpg"
- document.getElementsByTagName("img")[0].src="https://randomness69js.github.io/smg201worldlogo.png";
- audtime=document.getElementsByTagName("audio")[0].currentTime
- document.getElementsByTagName("audio")[0].src="https://randomness69js.github.io/snd/smg200charpage2.mp3"
- document.getElementsByTagName("audio")[0].currentTime=audtime
+ if (detstage==0) {
+  document.getElementsByTagName("header")[0].innerHTML=document.getElementsByTagName("header")[0].innerHTML.replaceAll("center","div")
+  document.getElementsByTagName("style")[0].innerHTML=document.getElementsByTagName("style")[0].innerHTML.replaceAll("-webkit-text-stroke-width: 1px;","")
+  document.getElementsByTagName("style")[0].innerHTML=document.getElementsByTagName("style")[0].innerHTML.replaceAll("-webkit-text-stroke-width: 1.5px;","")
+  document.getElementsByTagName("style")[0].innerHTML=document.getElementsByTagName("style")[0].innerHTML.replace("border-radius: 8px;","")
+  document.getElementsByTagName("style")[0].innerHTML=document.getElementsByTagName("style")[0].innerHTML.replace("padding: 20px;","")
+  cv1=document.getElementsByTagName("style")[0].innerHTML.search("#textcontainer")
+  cv2=document.getElementsByTagName("style")[0].innerHTML.search("max-width: 1500px;\n }")
+  cv3=cv2=document.getElementsByTagName("style")[0].innerHTML.toString()
+  cv4=cv3.split("#textcontainer")
+  cv5=cv3.split("max-width: 1500px;\n }")
+  document.getElementsByTagName("style")[0].innerHTML=cv4[0].toString()+cv5[1].toString()
+  document.getElementsByTagName("style")[0].innerHTML=document.getElementsByTagName("style")[0].innerHTML.replaceAll("background: radial-gradient(circle, #121212, #212121, #121212);","background: black")
+  document.getElementsByTagName("style")[0].innerHTML=document.getElementsByTagName("style")[0].innerHTML.replaceAll("linear-gradient(0deg, rgba(5, 5, 5, 1), rgba(45, 45, 45, 1));","darkgrey;") 
+  document.getElementsByTagName("h4")[0].innerHTML="500 years ago, he came to a foolish place. It's not know how it is why. <br> Nothing happened into our world because it wasn't enough about 20 years ago and the poor weather. These events start now."
+  document.getElementsByTagName("h4")[1].innerHTML="1. The cyber network network was fulfilled with a data violation caused by SMG200."
+  document.getElementsByTagName("h4")[2].innerHTML="2. The Kingdom of Mushrooms was evacuated because he put on the other world. (Can occur with SMG200)"
+  document.getElementsByTagName("h4")[3].innerHTML="3. A friend of SMG200 invite the man and make a huge fire and make mistakes (associated with SMG200)"
+  document.getElementsByTagName("h4")[4].innerHTML="4. The universe is almost dead while playing Minecraft for his 100 customers for special customers."
+  document.getElementsByTagName("h4")[5].innerHTML="5. SMG200 invited everyone to the party that caused traffic in the mushrooms."
+  document.getElementsByTagName("h4")[6].innerHTML="6. SMG200 accuses others to steal the fields and cause murder."
+  document.getElementsByTagName("h4")[7].innerHTML="7. SMG200 was banned from the crash that created rolls with about $ 20 in October."
+  document.getElementsByTagName("h4")[8].innerHTML="8. SMG200 put time in the climate in seven. Details of this event are not known if journalists have been injured during the show."
+  document.getElementsByTagName("h4")[9].innerHTML="If you get SMG200, be careful. To stay in."
+  document.getElementsByTagName("h1")[0].innerText="Information about the character"
+  document.getElementsByTagName("h1")[2].innerText="To catch new"
+  document.getElementsByTagName("h1")[3].innerText="Work"
+  document.getElementsByTagName("h1")[4].innerText="Handkeeper."
+  document.getElementsByTagName("img")[1].src="https://randomness69js.github.io/info/characterphotos/CharSMG201.jpg"
+  document.getElementsByTagName("img")[0].src="https://randomness69js.github.io/smg201worldlogo.png";
+  audtime=document.getElementsByTagName("audio")[0].currentTime
+  document.getElementsByTagName("audio")[0].src="https://randomness69js.github.io/snd/smg200charpage2.mp3"
+  document.getElementsByTagName("audio")[0].currentTime=audtime
+  detstage=1
+ }
+ if (detstage==1) {
+  document.getElementsByTagName("style")[0].remove()
+  document.getElementsByTagName("img")[0].src=""
+  document.getElementsByTagName("img")[1].src=""
+  document.getElementsByTagName("h1")[0].innerText="undefined"
+  document.getElementsByTagName("h1")[1].innerText="undefined"
+  document.getElementsByTagName("h1")[2].innerText="undefined"
+  document.getElementsByTagName("h1")[3].innerText="undefined"
+  document.getElementsByTagName("h1")[4].innerText="undefined"
+  document.getElementsByTagName("img")[1].src=""
+  document.getElementsByTagName("h4")[0].innerText="undefined"
+  document.getElementsByTagName("h4")[1].innerText="undefined"
+  document.getElementsByTagName("h4")[2].innerText="undefined"
+  document.getElementsByTagName("h4")[3].innerText="undefined"
+  document.getElementsByTagName("h4")[4].innerText="undefined"
+  document.getElementsByTagName("h4")[5].innerText="undefined"
+  document.getElementsByTagName("h4")[6].innerText="undefined"
+  document.getElementsByTagName("h4")[7].innerText="undefined"
+  document.getElementsByTagName("h4")[8].innerText="undefined"
+  document.getElementsByTagName("h4")[9].innerText="undefined"
+  audtime=document.getElementsByTagName("audio")[0].currentTime
+  document.getElementsByTagName("audio")[0].src="https://randomness69js.github.io/snd/smg200charpage3.mp3"
+  document.getElementsByTagName("audio")[0].currentTime=audtime
+  detstage=2
+ }
+ if (detstage==2) {
+  document.location="https://randomness69js.github.io/DONTLOOKATME"
+ }
 }
 </script>
 </body>
