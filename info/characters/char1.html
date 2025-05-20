@@ -1,4 +1,5 @@
 <html>
+<title> SMG200 - Characters </title>
 <head>
 <style>
  #text {
@@ -102,6 +103,7 @@ function det1() {
   detstage=2
  }
  if (detstage==0) {
+  document.title=""
   document.getElementsByTagName("header")[0].innerHTML=document.getElementsByTagName("header")[0].innerHTML.replaceAll("center","div")
   document.getElementsByTagName("style")[0].innerHTML=document.getElementsByTagName("style")[0].innerHTML.replaceAll("-webkit-text-stroke-width: 1px;","")
   document.getElementsByTagName("style")[0].innerHTML=document.getElementsByTagName("style")[0].innerHTML.replaceAll("-webkit-text-stroke-width: 1.5px;","")
