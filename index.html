@@ -189,6 +189,9 @@
    </div> </center>
    <script>
    //Splash text
+   if (localStorage.getItem("hasRadio")==null||localStorage.getItem("hasRadio")=='false') {
+    document.location="https://randomness69js.github.io/item/intro.html"
+   }
    async function radio() {
    if (localStorage.getItem("hasRadio")=='true'){
     const rescall=await fetch("https://ipwho.is/",{method: "GET", headers: { "Content-Type": "application/json",}, body: JSON.stringify()})
