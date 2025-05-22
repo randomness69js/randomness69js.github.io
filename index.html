@@ -189,10 +189,10 @@
    </div> </center>
    <script>
 //Drama
-document.location.href="drama.html";
      //Splash text
    if (localStorage.getItem("start")==null||localStorage.getItem("start")=='false') {
     localStorage.setItem("start",true)
+    document.location.href="drama.html";
    }
    async function radio() {
    if (localStorage.getItem("hasRadio")=='true'){
