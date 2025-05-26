@@ -4,6 +4,64 @@
   <head>
    <style>
      /* title and things and shit*/
+     #windowdiv {
+      border: 6px solid black;
+      border-radius: 2px;
+      padding: 0px;
+      margin: 0px 0;
+     }     
+     #windowdivcont {
+      width: 50%; 
+      position: absolute;
+      max-width: 600px;
+      z-index: 3;
+     }
+     #windowtopcont {
+      margin-bottom: 0px;
+     }
+     #windowtop {
+      background-image: linear-gradient(to right, grey , darkgrey);
+      margin-top: 0px;
+      height: 35px;
+      margin-bottom: 0px;
+      border-style: solid;
+      border-width: 0px 0px 5px 0px;
+     }
+     #wintoptext {
+      font-family: Courier New;
+      color: white;
+      margin-left: 10px;
+      font-size: 20px;
+      padding: 4px 0;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      margin-right: 0px;
+      -webkit-text-stroke: 1px black;
+     }
+     #xbutton {
+      color: black;
+      position: relative;
+      left: 35%;
+      line-height: 25px;
+      margin-bottom: 0px;
+      height: 25px;
+      font-size:20px;
+      display: inline-flex;
+      align-items: center;
+     }
+     #windowcontents {
+      background: lightgrey;
+      margin-bottom: 0px;
+      height: 100%;
+     }
+     #mustext {
+      font-family: sillymariofont;
+      font-size: 15px;
+      margin-bottom: 0px;
+      color: green;
+      text-decoration: underline;
+      -webkit-text-stroke: 1.5px black;
+     }
      html {
       height: 100%;
      }
@@ -16,11 +74,11 @@
      
      @font-face {
       font-family: sillymariofont;
-      src: url(SuperMario256.ttf);
+      src: url(https://randomness69js.github.io/SuperMario256.ttf);
      }
      @font-face {
       font-family: sillymariofont2;
-      src: url(SuperMarioBeta256.ttf);
+      src: url(https://randomness69js.github.io/SuperMarioBeta256.ttf);
      }
     
 
@@ -132,10 +190,6 @@
       top: 0;
       left: 0;
      }
-     
-     
-     
-      
      #button3 {
       position: relative;
       top: 0;
@@ -158,12 +212,141 @@
       position: relative;
       top: 0;
       left: 0;
+     }  
+     #button4 {
+      position: relative;
+      top: 0;
+      left: 0;
+      --grad1: white;
+      --grad2: lightgrey;
+      background: linear-gradient(var(--grad1), var(--grad2));
+      color: white;
+      font-family: sillymariofont2;
+       -webkit-text-stroke: 1.5px black;
+      font-size: 20px;
+      text-align: center;
+      padding: 7px 32px;
+      border-radius: 14px;
+      transition: --grad1 0.1s, --grad2 0.2s;
+     }
+     #button4:hover {
+      --grad1: lightgrey;
+      --grad2: grey;
+      position: relative;
+      top: 0;
+      left: 0;
      }
    </style>
    
    
   </head>
+  <!--/* please dont ask about the divs. it just works. */-->
   <body>
+  <div id="windowdivcont" hidden> 
+   <div id="windowdiv">
+    <div id="windowtopcont">
+     <div id="windowtop">
+      <h3 id="wintoptext"> SMG200s Untitled MP3 Player<button id="xbutton" onclick="javascript:hidewindow()">X</button> </h3>
+     </div>
+    </div>
+    <div id="windowcontents">
+     <center> <img src="https://smg200world.neocities.org/music.png" width="300px" height="300px" style="margin-bottom: -100px"></center>
+     <div id="musiccontrols">
+      <center> <button id="playbutton" onclick="javascript:playbutton();"> Play </button><button id="mutebutton" onclick="javascript:muteunmute();"> Mute </button>  
+      <h3 id="mustime" style="font-family: Arial; margin-top: 0px"> Hi </h3>
+      </center>
+     </div>
+     <hr>
+     <center> <p onclick="javascript:playsng1()" id="mustext"> Main Theme (Nintendo 3DS Video Theme) </p> </center>
+     <center> <p onclick="javascript:playsng2()" id="mustext"> Information Page (The End - C418) </p> </center>
+     <center> <p onclick="javascript:playsng3()" id="mustext"> Characters page (Thank you for your patience) </p> </center> 
+     <center> <p onclick="javascript:playsng4()" id="mustext"> Characters page Varient 2 (Thank you for your patience) </p> </center>
+     <center> <p onclick="javascript:playsng5()" id="mustext"> Characters page Varient 3 (Thank you for your patience) </p> </center>
+     <center> <p onclick="javascript:playsng6()" id="mustext"> About me Page (B3313 - Powerful mario) </p> </center>
+     <center> <p onclick="javascript:playsng7()" id="mustext"> Not found (Yume 2kki - Highway TV Room 7) </p> </center>
+     <center> <p onclick="javascript:playsng8()" id="mustext"> Spot the difference (Slideshow Whistler - Nintendo DSI) </p> </center>
+     <center> <p onclick="javascript:playsng9()" id="mustext"> New Item (Unnamed Bytebeat Song) </p> </center>
+    </div>
+   </div>
+  </div>
+  <script>
+  var mainmusloop=setInterval(function(){
+   document.getElementById("mustime").innerText=getmusictime();
+  }, 500);
+  function getmusictime() {
+   var date=new Date(0);
+   date.setSeconds(document.getElementsByTagName("audio")[0].currentTime);
+   var musstring=date.toISOString().substring(11, 19);
+  return musstring
+  }
+  var musicplaying=0
+  var musicplaying=document.getElementsByTagName("audio")[0].played.length
+  function muteunmute() {
+  if (document.getElementsByTagName("audio")[0].muted==true) {
+    document.getElementById("mutebutton").innerText="Mute"
+    document.getElementsByTagName("audio")[0].muted=false
+  } else {
+    document.getElementById("mutebutton").innerText="Unmute"
+    document.getElementsByTagName("audio")[0].muted=true
+  }
+  }
+  function playbutton() {
+   if (musicplaying==1) {
+    document.getElementsByTagName("audio")[0].pause()
+    document.getElementById("playbutton").innerText="Play"
+    musicplaying=0
+   } else {
+    document.getElementsByTagName("audio")[0].play()
+    document.getElementById("playbutton").innerText="Pause"
+    musicplaying=1
+   }
+  }
+  function playsng1() {
+   document.getElementsByTagName("audio")[0].src="https://randomness69js.github.io/music/song1.mp3"
+   musicplaying=1
+   document.getElementById("playbutton").innerText="Pause"
+  }
+  function playsng2() {
+   document.getElementsByTagName("audio")[0].src="https://randomness69js.github.io/music/song2.mp3"
+   musicplaying=1
+   document.getElementById("playbutton").innerText="Pause"
+  }  
+  function playsng3() {
+   document.getElementsByTagName("audio")[0].src="https://randomness69js.github.io/snd/smg200charpage1.mp3"
+   musicplaying=1
+   document.getElementById("playbutton").innerText="Pause"
+  }  
+  function playsng4() {
+   document.getElementsByTagName("audio")[0].src="https://randomness69js.github.io/snd/smg200charpage2.mp3"
+   musicplaying=1
+   document.getElementById("playbutton").innerText="Pause"
+  }
+  function playsng5() {
+   document.getElementsByTagName("audio")[0].src="https://randomness69js.github.io/snd/smg200charpage3.mp3"
+   musicplaying=1
+   document.getElementById("playbutton").innerText="Pause"
+  }
+  function playsng6() {
+   document.getElementsByTagName("audio")[0].src="https://randomness69js.github.io/music/song3.mp3"
+   musicplaying=1
+   document.getElementById("playbutton").innerText="Pause"
+  }
+  function playsng7() {
+   document.getElementsByTagName("audio")[0].src="https://randomness69js.github.io/music/song4.mp3"
+   musicplaying=1
+   document.getElementById("playbutton").innerText="Pause"
+  }  
+  function playsng8() {
+   document.getElementsByTagName("audio")[0].src="https://randomness69js.github.io/music/song5.mp3"
+   musicplaying=1
+   document.getElementById("playbutton").innerText="Pause"
+  }
+  function playsng9() {
+   document.getElementsByTagName("audio")[0].src="https://randomness69js.github.io/music/song6.mp3"
+   musicplaying=1
+   document.getElementById("playbutton").innerText="Pause"
+  }
+  </script>
   <audio autoplay loop>
    <source src="https://files.catbox.moe/bu8lfl.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
@@ -177,19 +360,34 @@
     <a href="https://archive.org/details/randomness69-archives_20250503"> <button id="button1"> VIDEOS </button> <a>
     <a href="https://randomness69js.github.io/info/"> <button id="button2"> INFO </button> </a>
     <a href="https://randomness69js.github.io/game.html"><button id="button3"> GAMES </button> </a>
+    <a href="javascript:showwindow();"><button id="button4"> RADIO </button> </a>
    </div>
    <center> <div id="morebuttons">
     <img src="https://randomness69js.github.io/buttons/button1.gif">
     <a href="https://www.debian.org/"><img src="https://randomness69js.github.io/buttons/button2.jpg"> </a>
-    <img src="/buttons/button3.gif"> 
+    <img src="https://randomness69js.github.io/buttons/button3.gif"> 
     <a href="https://www.w3schools.com/html/"><img src="https://randomness69js.github.io/buttons/button4.gif"> </a>
     <a href="https://neocities.org/"><img src="https://randomness69js.github.io/buttons/button5.gif"> </a>
     <a href="https://www.google.com/chrome/"><img src="https://randomness69js.github.io/buttons/button6.gif"> </a>
     <a href="https://discord.gg/2Pt8FZs2zM/"><img src="https://randomness69js.github.io/buttons/button7.gif"> </a>
    </div> </center>
    <script>
-//Drama
-     //Splash text
+   //I would prefer if you didnt steal my code >:3
+   //I would prefer if you didnt steal my code >:3
+   //I would prefer if you didnt steal my code >:3
+   if (localStorage.getItem("hasRadio")=='true'){
+    document.getElementById("button4").hidden=""
+   } else {
+    document.getElementById("button4").hidden="true"
+   }
+   function showwindow() {
+    if (localStorage.getItem("hasRadio")=='true'){
+    document.getElementById("windowdivcont").hidden=""
+    }
+   }
+   function hidewindow() {
+    document.getElementById("windowdivcont").hidden="true"
+   }
    if (localStorage.getItem("start")==null||localStorage.getItem("start")=='false') {
     localStorage.setItem("start",true)
     document.location.href="drama.html";
@@ -284,10 +482,10 @@
     splashtext.innerText="Refresh the page!"
    }
 
-   //I would prefer if you didnt steal my code :-)
-   //I would prefer if you didnt steal my code :-)
-   //I would prefer if you didnt steal my code :-)
    function critical() {
+    document.getElementById("windowdivcont").remove()
+    document.getElementsByTagName("script")[0].remove()
+    clearInterval(mainmusloop);
     for (var i=0; i < document.getElementsByTagName("img").length; i++){
      document.getElementsByTagName("img")[i].style.perspective=(20+Math.round(Math.random()*100)).toString()+'px'
      document.getElementsByTagName("img")[i].style.transform='rotateY('+(Math.round(Math.random()*360)).toString()+'deg)'
@@ -399,5 +597,40 @@ if (Math.round(Math.random(10005)*10005)==9084||document.location.href=="https:/
    radio();
    console.log("test")
    </script>
+   <script>
+    /***********************************************
+    * ORIGINAL CODE PROVIVED BY W3SCHOOLS
+    * MODIFIED BY ME
+    ***********************************************/
+    dragElement(document.getElementById("windowdivcont"))
+    function dragElement(elmnt) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+     if (document.getElementById("windowtopcont")) {
+      document.getElementById("windowtopcont").onmousedown = dragMouseDown;
+     }
+    function dragMouseDown(e) {
+     e = e || window.event;
+     e.preventDefault();
+     pos3 = e.clientX;
+     pos4 = e.clientY;
+     document.onmouseup = closeDragElement;
+     document.onmousemove = elementDrag;
+    }
+    function elementDrag(e) {
+     e = e || window.event;
+     e.preventDefault();
+     pos1 = pos3 - e.clientX;
+     pos2 = pos4 - e.clientY;
+     pos3 = e.clientX;
+     pos4 = e.clientY;
+     elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    }
+    function closeDragElement() {
+     document.onmouseup = null;
+     document.onmousemove = null;
+    }
+    }
+    </script>
   </body>
 </html>
