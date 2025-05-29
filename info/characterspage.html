@@ -92,8 +92,6 @@
   </div>
   <script>
   function scare() {
-   document.getElementById("devkit").onclick=""
-   document.getElementById("devkit").href=""
    document.getElementsByTagName("audio")[0].pause();
    document.getElementsByTagName("audio")[0].src="https://randomness69js.github.io/loe.mp3";
    document.getElementsByTagName("audio")[0].play();
@@ -111,6 +109,8 @@
    document.body.style.overflow="hidden"
    var i=0
    var i2=0
+   document.getElementById("devkit").onclick=""
+   document.getElementById("devkit").href=""
    function imgsf() {
     document.getElementById("toptitle").style.opacity=(100-i*2.2).toString()+"%"
     document.getElementById("charlist").style.opacity=(100-i*2.2).toString()+"%"
