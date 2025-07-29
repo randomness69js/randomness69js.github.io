@@ -1,0 +1,35 @@
+
+<html>
+<title> ...</title>
+<head>
+ <style>
+  body {
+   background-color: black;
+  }
+  #video {
+   position: fixed;
+   right: 0;
+   bottom: 0;
+   height: 100%;
+   width: 100%;
+  }
+ </style>
+</head>
+<body onclick="scare()">
+ <video src="imscared.mp4" hidden id="video" type="video/mp4"> </video>
+<script>
+video=document.getElementById("video")
+video.addEventListener("ended", (event) => {
+  document.location="https://randomness69js.github.io/"
+})
+
+function scare() {
+setTimeout(() => {
+ document.getElementById('video').play();
+ document.getElementById('video').hidden=''
+ document.title="CAN YOU SEE ME"
+}, 1000);
+}
+</script>
+</body>
+</html>
