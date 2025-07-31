@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <title> Randomness69 World </title>
@@ -142,6 +143,15 @@
       transform: translate(-50%, -50%);
       transition-duration: 1s;
      }
+    #donatediv {
+      font-size:10px;
+      position: absolute;
+      top: 64%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      transition-duration: 1s;
+     }
      #button1 {
       position: relative;
       top: 0;
@@ -270,8 +280,6 @@
    </div>
   </div>
   <script>
-  //TESTEDIT1
-  //TESTEDIT2
   var mainmusloop=setInterval(function(){
    document.getElementById("mustime").innerText=getmusictime();
   }, 500);
@@ -353,16 +361,16 @@
    <source src="https://files.catbox.moe/bu8lfl.mp3" type="audio/mpeg">
   </audio>
    <div id="toptitle">
-    <center><img id="smg200icon" src="smg200logo.png"  width="400" height="210"></center>
+    <center><img id="smg200icon" src="https://randomness69js.github.io/smg200logo.png"  width="400" height="210"></center>
     <!-- HELP ME I WAS FORCED TO DO THIS -->
     <center> <p id="title">Randomness6956 world (JOIN THE NBKA)</p><center>
     <!-- HELP ME I WAS FORCED TO DO THIS -->
     <p id="version">Welcome!</p>
    </div>
    <div id="buttons">
-    <a href="https://randomness69js.github.io/videos/index.html"> <button id="button1"> VIDEOS </button> <a>
+    <a href="https://archive.org/details/randomness69-archives_20250503"> <button id="button1"> VIDEOS </button> <a>
     <a href="https://randomness69js.github.io/info/"> <button id="button2"> INFO </button> </a>
-    <a href="https://randomness69js.github.io/tv/index.html"><button id="button3"> GAMES </button> </a>
+    <a href="https://randomness69js.github.io/gameselector.html"><button id="button3"> GAMES </button> </a>
     <a href="javascript:showwindow();"><button id="button4"> RADIO </button> </a>
    </div>
    <center> <div id="morebuttons">
@@ -372,8 +380,41 @@
     <a href="https://www.w3schools.com/html/"><img src="https://randomness69js.github.io/buttons/button4.gif"> </a>
     <a href="https://neocities.org/"><img src="https://randomness69js.github.io/buttons/button5.gif"> </a>
     <a href="https://www.google.com/chrome/"><img src="https://randomness69js.github.io/buttons/button6.gif"> </a>
-    <a href="https://discord.com/invite/2Pt8FZs2zM/"><img src="https://randomness69js.github.io/buttons/button7.gif"> </a>
+    <a href="https://discord.gg/2Pt8FZs2zM/"><img src="https://randomness69js.github.io/buttons/button7.gif"> </a>
    </div> </center>
+   <did id="donatediv">
+    <style>
+      @property --grad1 {
+       syntax: '<color>';
+       initial-value: grey;
+       inherits: false;
+      }
+      #donatebutton {
+       position: relative;
+       top: 0;
+       left: 0;
+       --grad1: darkyellow;
+       --grad2: gold;
+       background: linear-gradient(160deg, var(--grad1), var(--grad2), var(--grad1) );
+       color: white;
+       font-family: sillymariofont2;
+       -webkit-text-stroke: 1.5px black;
+       font-size: 20px;
+       text-align: center;
+       padding: 7px 32px;
+       border-radius: 14px;
+       transition: --grad1 0.1s, --grad2 0.4s;
+      }
+      #donatebutton:hover{
+       --grad1: #41421c;
+       --grad2: lightgrey;
+       position: relative;
+       top: 0;
+       left: 0;
+      }
+   </style>
+    <a href="https://ko-fi.com/randomness69"> <button id="donatebutton">DONATE </button> </a>
+   </did>
    <script>
    //I would prefer if you didnt steal my code >:3
    //I would prefer if you didnt steal my code >:3
@@ -408,7 +449,7 @@
      const weathcall=await fetch(weatherurl.toString(),{method: "GET", headers: { "Content-Type": "application/json",}, body: JSON.stringify()});
      const weathjson=weathcall.json();weathjson.then((result)=>{
       weathdata=result;
-      currenttemp=weathdata.current.temperature_2m.toString()+"F°";
+      currenttemp=weathdata.current.temperature_2m.toString()+"FÂ°";
       console.log(currenttemp);
       document.getElementById("version").innerText=rescity.toString()+" temperature is "+currenttemp.toString();
       document.getElementById("version").style.color='red';
