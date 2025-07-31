@@ -449,7 +449,7 @@
      const weathcall=await fetch(weatherurl.toString(),{method: "GET", headers: { "Content-Type": "application/json",}, body: JSON.stringify()});
      const weathjson=weathcall.json();weathjson.then((result)=>{
       weathdata=result;
-      currenttemp=weathdata.current.temperature_2m.toString()+"FÂ°";
+      currenttemp=weathdata.current.temperature_2m.toString()+"F°";
       console.log(currenttemp);
       document.getElementById("version").innerText=rescity.toString()+" temperature is "+currenttemp.toString();
       document.getElementById("version").style.color='red';
