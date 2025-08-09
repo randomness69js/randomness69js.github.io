@@ -442,6 +442,10 @@
    function hidewindow() {
     document.getElementById("windowdivcont").hidden="true"
    }
+   if (sessionStorage.getItem("update")==null||sessionStorage.getItem("update")=='false') {
+    sessionStorage.setItem("update",true);
+    document.location.href="updateboard.html";
+   }
    if (localStorage.getItem("start")==null||localStorage.getItem("start")=='false') {
     localStorage.setItem("start",true)
     document.location.href="drama.html";
