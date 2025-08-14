@@ -17,15 +17,19 @@
   left: 41%;
   top: 45%;
   width: 13%;
+  
+  transition: 0.3s;
+
   height: 25%;
   z-index: 3;
  }
  #paper {
   position: absolute; 
-  left: 41%;
+  left: 42%;
   top: 66%;
-  width: 4%;
-  height: 5%;
+  width: 2.5%;
+  transition: 0.3s;
+  height: 3.75%;
   z-index: 2;
  }
  #tag {
@@ -53,10 +57,10 @@
  <audio autoplay loop>
   <source src="https://randomness69js.github.io/office/officeamb.mp3" type="audio/mpeg">
  </audio>
- <a id="computerlink" href="https://randomness69js.github.io/computer/index.html"> <img src="monitor.png" id="monitor"> </a>
+ <a id="computerlink" href="https://randomness69js.github.io/computer/index.html"> <img src="https://randomness69js.github.io/office/monitor.png" id="monitor"> </a>
  <img src="https://randomness69js.github.io/office/desk.jpg" id="desk"> 
  <a id="paperlink" href="https://randomness69js.github.io/">  </a>
- <img src="https://randomness69js.github.io/office/paper.png" id="paper">
+ <img style="transform: matrix3d(1, 0, 0, 0, 0, 1, 0, -0.025, 0, 0, 1, 0, 1, 0, 0, 1);" onclick="document.location.href='https://randomness69js.github.io/'" src="https://randomness69js.github.io/office/paper.png" id="paper">
  <img src="https://randomness69js.github.io/office/tag.png" id="tag" hidden>
 </body>
 <script>
@@ -67,6 +71,35 @@ ref=document.referrer.includes("info");
 if (!ref){
  document.location="/"; 
 }
+}
+const paperlink=document.getElementById("paperlink")
+const paper=document.getElementById("paper")
+const computer=document.getElementById("monitor")
+const computerlink=document.getElementById("computerlink")
+
+computer.addEventListener("mouseleave",(event)=>{animation2a();});
+computerlink.addEventListener("mouseover",(event)=>{animationa();});
+
+function animationa() {
+
+computerlink.style="z-index: 5;"
+computer.style="transform: scale(1.2,1.2);"
+}
+
+function animation2a() {
+
+computerlink.style="z-index: 2;"
+computer.style="transform: scale(1,1);"
+}
+paper.addEventListener("mouseleave",(event)=>{animation2();});
+paperlink.addEventListener("mouseover",(event)=>{animation();});
+function animation() {
+ paperlink.style="z-index: 4;"
+ paper.style="transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1); z-index: 4;"
+ setTimeout(function() { paper.style="transform: matrix3d(10, 0, 0, 0, 0, 16, 0, 0, 0, 0, 1, 0, 80, -180, 0, 1); z-index: 4; cursor: pointer;"},200)
+}
+function animation2() {
+paper.style="transform: matrix3d(1, 0, 0, 0, 0, 1, 0, -0.025, 0, 0, 1, 0, 1, 0, 0, 1); z-index: 1;"
 }
 checkaccess()
 if (localStorage.getItem("endingBgotten")=='true') {
