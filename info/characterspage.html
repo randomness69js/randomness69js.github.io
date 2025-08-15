@@ -62,7 +62,14 @@
       margin: 0 auto;
       max-width: 1200px;
      }
-
+     .front {
+      position: sticky;
+      z-index: 10;
+     }
+     .back {
+      position: sticky;
+      z-index: 1;
+     }
    </style>
    
    
@@ -81,16 +88,31 @@
   <div id="charlist">
    <center> 
     <div id="card">
-     <a href="https://randomness69js.github.io/info/characters/char1.html"> <img src="https://randomness69js.github.io/info/characterphotos/CharSMG200.jpg" height="150px" width="150px"> </a>
-     <a href="https://randomness69js.github.io/info/characters/char2.html"> <img src="https://randomness69js.github.io/info/characterphotos/CharRift.jpg" height="150px" width="150px"> </a>
-     <a id="devkit" href="#" onclick="javascript:scare();"> <img src="https://randomness69js.github.io/info/characterphotos/CharDevkit.jpg" height="150px" width="150px"> </a>
-     <a href="https://randomness69js.github.io/info/characters/char4.html"> <img src="https://randomness69js.github.io/info/characterphotos/CharSoviet.jpg" height="150px" width="150px"> </a>
+     <a href="https://randomness69js.github.io/info/characters/char1.html"> <img id="char1" class="" src="https://randomness69js.github.io/info/characterphotos/CharSMG200.jpg" height="150px" width="150px"> </a>
+     <a href="https://randomness69js.github.io/info/characters/char2.html"> <img id="char2" class="" src="https://randomness69js.github.io/info/characterphotos/CharRift.jpg" height="150px" width="150px"> </a>
+     <a href="#" onclick="javascript:scare();"> <img id="devkit" src="https://randomness69js.github.io/info/characterphotos/CharDevkit.jpg" height="150px" width="150px"> </a>
+     <a href="https://randomness69js.github.io/info/characters/char4.html"> <img id="char4" src="https://randomness69js.github.io/info/characterphotos/CharSoviet.jpg" height="150px" width="150px"> </a>
      <img src="https://randomness69js.github.io/info/characterphotos/CharMrpuzzles.jpg" hidden height="150px" width="150px">
      <img src="https://randomness69js.github.io/info/characterphotos/CharHoodbro.jpg" hidden height="150px" width="150px">
     </div> 
   </center>
   </div>
   <script>
+  const char1=document.getElementById("char1")
+  const char2=document.getElementById("char2")
+  const char3=document.getElementById("devkit")
+  const char4=document.getElementById("char4")
+  const smglogo=document.getElementById("smg200worldicon")
+  char1.addEventListener("mouseleave",(event)=>{char1.style="transition: 0.3s; transform: scale(1,1);"; char1.className="back"}); 
+  char1.addEventListener("mouseover",(event)=>{char1.style="transition: 0.3s; transform: scale(1.2,1.2);";char1.className="front"});
+  char2.addEventListener("mouseleave",(event)=>{char2.style="transition: 0.3s; transform: scale(1,1);"; char2.className="back"}); 
+  char2.addEventListener("mouseover",(event)=>{char2.style="transition: 0.3s; transform: scale(1.2,1.2);"; char2.className="front"});
+  char3.addEventListener("mouseleave",(event)=>{char3.style="transition: 0.3s; transform: scale(1,1);"; char3.className="back"}); 
+  char3.addEventListener("mouseover",(event)=>{char3.style="transition: 0.3s; transform: scale(1.2,1.2);"; char3.className="front"});
+  char4.addEventListener("mouseleave",(event)=>{char4.style="transition: 0.3s; transform: scale(1,1);"; char4.className="back"}); 
+  char4.addEventListener("mouseover",(event)=>{char4.style="transition: 0.3s; transform: scale(1.2,1.2);"; char4.className="front"});
+  smglogo.addEventListener("mouseleave",(event)=>{smglogo.style="transition: 0.3s; transform: scale(1,1);"; smglogo.className="back"}); 
+  smglogo.addEventListener("mouseover",(event)=>{smglogo.style="transition: 0.3s; transform: scale(1.1,1.1);"; smglogo.className="front"});
   function scare() {
    document.getElementsByTagName("audio")[0].pause();
    document.getElementsByTagName("audio")[0].src="https://randomness69js.github.io/loe.mp3";
