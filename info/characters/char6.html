@@ -1,0 +1,140 @@
+
+<html>
+<title> Hoodbro - Characters </title>
+<head>
+<style>
+ @font-face {
+  font-family: font;
+  src: url(https://randomness69js.github.io/computer/pencil.ttf);
+ }
+ #text {
+  background-image: url('meat.jpg');
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  outline: 5px solid #3d1b18;
+ }
+ #textcontainer {
+  width: 95%;
+  color: darkred;
+  margin: 0 auto;
+  max-width: 1500px;
+ }
+ #bigtext {
+   font-size:60px;
+ } 
+ #lessbigtext {
+   font-size:50px;
+ }
+ body {
+  background-image: url('https://randomness69js.github.io/computer/guilt/meat0.png');
+ }
+ body::-webkit-scrollbar {
+  display: none;
+ }
+ h1 {
+  font-family: font;
+  color: red;
+  -webkit-text-stroke-width: 0.6px;
+  -webkit-text-stroke-color: black;
+ } 
+ h2 {
+  font-family: font;
+  color: red;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
+ }
+ #blood {
+  margin-left: -256px;
+  margin-bottom: -50px;
+  align-items: center;
+ }
+ h4 {
+  font-family: font;
+  color: red;
+  font-size: 18px;  
+  -webkit-text-stroke-width: 0.04px;
+  -webkit-text-stroke-color: black;
+ }
+ #stain {
+  position: fixed;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  pointer-events: none;
+ }
+ #insect {
+  width:11px;
+  filter: brightness(0.5);
+  opacity: 50%;
+  position: absolute;
+ }
+</style>
+</head>
+<body>
+ <img id="stain" src="stain.png">
+ <audio autoplay loop> <source src="https://files.catbox.moe/4u096e.mp3" type="audio/mpeg"></audio>
+ <header>
+   <center> <a href="https://randomness69js.github.io/"> <img id="smg200worldicon" src="https://randomness69js.github.io/info/worldlogosmg.png" width="400px" height="200px"></a></center>
+   <center> <h1 id="bigtext"> Character information. </h1> </center>
+ </header>
+ <div id="textcontainer">
+  <div id="text">
+   <h1 id="lessbigtext"> Hoodbro </h1>
+   <a> <img src="hoodbro.png" width="250px" height="300px">  <img id="blood" src="blood.gif" width="250px" height="50px">  </a>
+  
+   <h1> Drama </h1>
+   <h4> 
+    The person this character was based off is extremely controversial, I don't think he even deserves a character page.  <br>
+    He was an awful person, I regret ever being friends with him, just like with handunit too.  <br>
+    The things he does is just so vile, repulsive and just disgusting. <br>
+    Thats all I am going to say about the person he is based off of. I hope he changes his ways. <br>
+    I no longer want to be associated with him. <br>
+  </div>
+ </div>
+<script>
+fly=document.getElementById("insect")
+flyx=1700
+flyy=800
+flyspeedx=1
+flyspeedy=1
+
+looping=setInterval(bugfly,10);
+function bugfly() {
+ fly=document.getElementById("insect")
+ flyx+=flyspeedx
+ flyy+=flyspeedy
+ if (flyx > window.innerWidth) {
+  flyspeedx=-(Math.random(1)*1)
+ }
+ if (flyy > window.innerHeight) {
+  flyspeedy=-(Math.random(2)*2)
+ }
+ if (flyx < 0) {
+  flyspeedx=(Math.random(2)*2)
+ }
+ if (flyy < 0) {
+  flyspeedy=(Math.random(2)*2)
+ }
+ if (Math.round(Math.random(2)*2)==0) {
+  if (Math.round(Math.random(3)*3)==0) {
+    flyspeedy+=0.01
+   } else {
+    flyspeedy-=0.01
+   }
+  } else {
+   if (Math.round(Math.random(3)*3)==0) {
+    flyspeedx+=0.01
+   } else {
+    flyspeedx-=0.01
+   }
+ }
+ fly.style="left: "+flyx+"px; top: "+flyy+"px;"
+}
+document.getElementById("smg200worldicon").addEventListener("mouseover",function(){document.getElementById("smg200worldicon").style="transition: 0.3s; transform: scale(1.2,1.2);"})
+document.getElementById("smg200worldicon").addEventListener("mouseleave",function(){document.getElementById("smg200worldicon").style="transition: 0.3s; transform: scale(1,1);"})
+</script>
+<img src="insect.gif" id="insect" style="left: 1700px; top: 800px;">
+</body>
+</html>
