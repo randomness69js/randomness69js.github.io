@@ -1,0 +1,158 @@
+
+<html>
+<title> Control - Characters </title>
+<head>
+<style>
+ #text {
+  background: linear-gradient(0deg, rgba(5, 5, 5, 1), rgba(45, 45, 45, 1));
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  outline: 5px solid white;
+ }
+ #textcontainer {
+  width: 95%;
+  margin: 0 auto;
+  max-width: 1500px;
+ }
+ #bigtext {
+   font-size:50px;
+ } 
+ #lessbigtext {
+   font-size:40px;
+ }
+ body {
+  background: radial-gradient(circle, #121212, #212121, #121212);
+ }
+ h1 {
+  font-family: Helvetica;
+  color: white;
+  font-size: 34px;  
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
+ } 
+
+
+ @keyframes tcanim1 {
+  from {
+   min-height: 85px;
+  }
+  to {
+   min-height: 125px;
+  }	
+ } 
+ @keyframes tcanim2 {
+  from {
+   opacity: 0%;
+  }
+  to {
+   opacity: 100%;
+  }	
+ }
+ .anim1 {
+  animation: tcanim1 2s ease-out 0.5s 1 forwards;
+ } 
+ .anim2 {
+  animation: tcanim2 2s ease-out 0.5s 1 forwards;
+ }
+ #textcontainer {
+  background: linear-gradient(0deg, rgba(5, 5, 5, 1), rgba(45, 45, 45, 1));
+  border-radius: 8px;
+  padding: 20px;
+  min-height: 85px;
+  margin: 20px 0;
+  outline: 5px solid white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ }
+ #buttons {
+  opacity: 0%;
+ }
+</style>
+</head>
+<body>
+ <audio src="whoiscontrol.mp3" autoplay loop ></audio>
+ <center> 
+  <div id="textcontainer"> 
+  	<h1 id="line"></h1> 
+  	<div hidden id="buttons">
+  	 <button onclick="document.location.href='https://randomness69js.github.io/'">Leave</button>
+  	 <button onclick="document.location.href='https://randomness69js.github.io/office/index.html'">Visit desk</button>
+  	 <button onclick="document.location.href='./poster.html'">Look at poster</button>
+    </div>
+   </div>
+</center>
+<script>
+strings=["I had this dream once.","When the world was only black and white.","I was a very wealthy and rude person.","I had everything I could ever want but I treated everyone poorly.","But for some reason, I had this strange thought.","So I looked across the horizon and saw something.","A familiar person.","It was me.","But something wasnt right.","It was me as a child. All colourful and bright.","I walked over to him.","All innocent and happy.","He greeted me with a big smile on his face.","I greeted him back and walked back to my throne.","However I noticed something again.","I looked at my hand.","It was colourful again.","...","You know...","People think Im dead...","...","Im not.","They just cant see me","And I hate it.","So much.","I would give anything for me to be seen again.","...","You know what...","Just leave me alone please..."]
+var i=0
+if (localStorage.getItem("visit")=='true'||localStorage.getItem("visit")==true) {
+ strings=["What do you want..."]
+}
+sdiv=document.getElementById("textcontainer")
+sline=document.getElementById("line")
+slinetext=sline.innerText
+i2=0
+d=0
+function linestring() {
+ if (i2<strings.length) {
+  if (i<strings[i2].length) {
+   slinetext+=strings[(i2)][i]
+   sline.innerText=slinetext
+   addEventListener("mouseup", (event) => {d=0})
+   addEventListener("mousedown", (event) => {d=1})
+   if (d==0) {
+    setTimeout(linestring,20+Math.round(Math.random(50)*50))
+   } else {
+    setTimeout(linestring,10)
+   }
+   i++;
+  } else {
+   sline=document.getElementById("line")
+   slinetext=sline.innerText
+   i=0
+   i2+=1
+   if (i2==strings.length) {} else {
+    if (d==0) {
+     setTimeout(linestring2,1500)
+    } else {
+     setTimeout(linestring2,10)
+    }
+   }
+  }
+ } else {
+  showbuttons()
+ }
+ if (i2==strings.length) {
+  showbuttons()
+ }
+}
+function showbuttons() {
+sdiv.className='anim1'
+localStorage.setItem("visit",true);
+setTimeout(() => { document.getElementById("buttons").hidden=''; document.getElementById("buttons").className='anim2'}, 2000)
+}
+function linestring2() {
+ if (sline.innerText.length>0) {
+  sline=document.getElementById("line")
+  slinetext=sline.innerText
+  slinetext=slinetext.replace(slinetext[slinetext.length-1],"")
+  sline.innerText=slinetext
+  if (d==0) {
+   setTimeout(linestring2,60)
+  } else {
+   setTimeout(linestring2,1)
+  }
+ } else {
+  if (d==0) {
+   setTimeout(linestring,1560)
+  } else {
+   setTimeout(linestring,10)
+  }
+ }
+}
+setTimeout(linestring,560)
+</script>
+</body>
+</html>
