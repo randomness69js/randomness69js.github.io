@@ -68,7 +68,7 @@
 const delay=ms=>new Promise(res => setTimeout(res, ms));
 const checkaccess=async()=>{
 await delay(20);
-ref=document.referrer.includes("info");
+ref=document.referrer.includes("control");
 if (!ref){
 document.location="/"; 
 }
