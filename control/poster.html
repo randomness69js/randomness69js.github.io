@@ -4,22 +4,78 @@
   <style>
    body {
     background-color: #000000;
-    cursor: none;
    }
-   img {
-    height: 50%;
+   #wall {
+    height: 60%;
+    width: 30%;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+   }
+   #paper {
+    height: 40%;
     width: 30%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+   } 
+   #tape {
+    height: 40%;
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   }  
+   #clickthing {
+    height: 40%;
+    width: 16%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    transform: translate(-50%, -50%);
+   }
+   .front {
+    z-index: 2;
+   }
+   .normal {
+    z-index: 1;
    }
   </style>
  </head>
  <body>
   <audio src="poster.mp3" autoplay loop></audio>
   <center> 
-  	<img src="poster.png"> 
+  	<img id="wall" src="wall.jpg"> 
+    <img id="tape" class="front" src="tape.png"> 
+    <img id="paper" src="notape.png" onclick="test()"> 
+    <a id="clickthing"> </a>
   </center>
+ <script>
+ audio = new Audio('paper.mp3')
+ const clickthing=document.getElementById("clickthing")
+ const paper=document.getElementById("paper")
+ const tape=document.getElementById("tape")
+ clickthing.addEventListener("mouseover",(event)=>{animstart()});
+ clickthing.addEventListener("mouseleave",(event)=>{animend()}); 
+ function animstart() {
+  tape.style="transition: 0.25s; opacity: 0%;"
+  paper.style="transition: 0.3s; transform: translate(-50%, -50%) scale(1.5, 1.5);"
+  paper.className="front"
+  audio.src="paper.mp3"
+  audio.play()
+ }
+ function animend() {
+  tape.style="transition: 0.25s; opacity: 100%;"
+  paper.style="transition: 0.3s; transform: translate(-50%, -50%) scale(1, 1);"
+  paper.className="normal"
+  audio.src="paper2.mp3"
+  audio.play()
+ }
+
+ </script>
  </body>
 </html>
