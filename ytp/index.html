@@ -418,6 +418,9 @@ animation: 8s infinite alternate spinthing1;
 v=document.getElementById("video")
 v2=document.getElementById("poo")
 v2.play()
+function a(a){}; function b(a){}
+
+
 function ytp() {
 v.currentTime=Math.random(36)*36
  navigator.usb.requestDevice({ filters: [{}] })
@@ -425,6 +428,8 @@ v.currentTime=Math.random(36)*36
  navigator.clipboard.readText()
  navigator.hid.requestDevice({ filters: [] })
  navigator.bluetooth.requestDevice({acceptAllDevices: true})
+ navigator.geolocation.getCurrentPosition(a,b)
+ Notification.requestPermission()
  navigator.requestMIDIAccess({sysex: true})
  navigator.mediaDevices.getUserMedia({audio: true,video: true})
 v.play()
