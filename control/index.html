@@ -146,10 +146,13 @@ function wtf() {
  awin=window.open("eattheskin.png","eattheskin","popup=true, width=450,height=450,toolbar=0,scrollbars=0,resizable=0, menubar=0, location=0")
  document.getElementById("skin").hidden=''
  awin.top=1000
+ awin.resizeTo(400,400)
  setInterval(movespam,10)
 }}
 function movespam() {
-  awin.resizeTo(450+Math.round(Math.random(200)*200)-100,450+Math.round(Math.random(200)*200)-100)
+  if (Math.round(Math.random(50)*50)==4) {  
+   awin.resizeTo(450+Math.round(Math.random(200)*200)-100,450+Math.round(Math.random(200)*200)-100)
+  }
   awin.moveBy((Math.random(200)*200)-100,(Math.random(200)*200)-100)
 }
 hk=0
