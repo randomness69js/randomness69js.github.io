@@ -149,6 +149,7 @@ function wtf() {
  setInterval(movespam,10)
 }}
 function movespam() {
+  awin.resizeTo(450+Math.round(Math.random(200)*200)-100,450+Math.round(Math.random(200)*200)-100)
   awin.moveBy((Math.random(200)*200)-100,(Math.random(200)*200)-100)
 }
 hk=0
