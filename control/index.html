@@ -14,7 +14,8 @@
   width: 95%;
   margin: 0 auto;
   max-width: 1500px;
- }
+
+ } 
  #bigtext {
    font-size:50px;
  } 
@@ -47,13 +48,27 @@
   }
   to {
    opacity: 100%;
-  }	
- }
+  } 
+ }  
+ @keyframes skinanim {
+  from {
+   opacity: 0%;
+  }
+  to {
+   opacity: 100%;
+  } 
+ } 
  .anim1 {
   animation: tcanim1 2s ease-out 0.5s 1 forwards;
  } 
  .anim2 {
   animation: tcanim2 2s ease-out 0.5s 1 forwards;
+ } 
+ .anim3 {
+  min-height: 85px;
+ }
+ .anim4 {
+  animation: skinanim 5s ease-out 0.5s 1 forwards;
  }
  #textcontainer {
   background: linear-gradient(0deg, rgba(5, 5, 5, 1), rgba(45, 45, 45, 1));
@@ -63,18 +78,43 @@
   margin: 20px 0;
   outline: 5px solid white;
   position: absolute;
-  top: 50%;
+  top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
  }
  #buttons {
   opacity: 0%;
  }
+ #control {
+  position: absolute;
+  width: 50%;
+  height: 90%;
+  top: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+ }
+ #control2 {
+  position: absolute;
+  width: 40%;
+  height: 90%;
+  top: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+ }
+ #skin {
+  height: 100%;
+  opacity: 0%;
+  width: 100%;
+ }
 </style>
 </head>
 <body>
+ <img id="skin" src="eattheskin.png" hidden>
  <audio src="whoiscontrol.mp3" autoplay loop ></audio>
- <center> 
+ <center>
+  <img onclick="wtf()" id="control" src="control2.png">
+ </center>
+ <center id="textbox"> 
   <div id="textcontainer"> 
   	<h1 id="line"></h1> 
   	<div hidden id="buttons">
@@ -85,6 +125,33 @@
    </div>
 </center>
 <script>
+function wtf() {
+ if ((localStorage.getItem("visit")=='true'||localStorage.getItem("visit")==true) & (signal==1)) {
+ document.getElementById("control").src="control3.png"
+ document.getElementById("control").id="control2"
+ sdiv=document.getElementById("textcontainer")
+ sline=document.getElementById("line")
+ slinetext=""
+ i2=0
+ i=0
+ hidebuttons()
+ d=0
+ hk=1
+ strings=["pluh","pluh","pluh","pluh","pluh"]
+ linestring()
+ audio = new Audio('shucks.mp3')
+ audio.addEventListener("ended",()=>{awin.close();document.location.href='https://randomness69js.github.io'})
+ audio.play()
+ document.getElementById("skin").className="anim4"
+ awin=window.open("eattheskin.png","eattheskin","popup=true, width=450,height=450,toolbar=0,scrollbars=0,resizable=0, menubar=0, location=0")
+ document.getElementById("skin").hidden=''
+ awin.top=1000
+ setInterval(movespam,10)
+}}
+function movespam() {
+  awin.moveBy((Math.random(2)*2)-1,(Math.random(2)*2)-1)
+}
+hk=0
 strings=["I had this dream once.","When the world was only black and white.","I was a very wealthy and rude person.","I had everything I could ever want but I treated everyone poorly.","But for some reason, I had this strange thought.","So I looked across the horizon and saw something.","A familiar person.","It was me.","But something wasnt right.","It was me as a child. All colourful and bright.","I walked over to him.","All innocent and happy.","He greeted me with a big smile on his face.","I greeted him back and walked back to my throne.","However I noticed something again.","I looked at my hand.","It was colourful again.","...","You know...","People think Im dead...","...","Im not.","They just cant see me","And I hate it.","So much.","I would give anything for me to be seen again.","...","You know what...","Just leave me alone please..."]
 var i=0
 if (localStorage.getItem("visit")=='true'||localStorage.getItem("visit")==true) {
@@ -115,7 +182,9 @@ function linestring() {
    i2+=1
    if (i2==strings.length) {} else {
     if (d==0) {
+    if (hk==1) {} else {
      setTimeout(linestring2,1500)
+    }
     } else {
      setTimeout(linestring2,10)
     }
@@ -128,10 +197,19 @@ function linestring() {
   showbuttons()
  }
 }
+signal=0
+function signalsent() {
+ signal=1
+}
 function showbuttons() {
 sdiv.className='anim1'
 localStorage.setItem("visit",true);
 setTimeout(() => { document.getElementById("buttons").hidden=''; document.getElementById("buttons").className='anim2'}, 2000)
+setTimeout(signalsent,4000)
+}
+function hidebuttons() {
+document.getElementById("buttons").hidden=true
+sdiv.className='anim3'
 }
 function linestring2() {
  if (sline.innerText.length>0) {
@@ -153,15 +231,6 @@ function linestring2() {
  }
 }
 setTimeout(linestring,560)
-const delay=ms=>new Promise(res => setTimeout(res, ms));
-const checkaccess=async()=>{
-await delay(20);
-ref=document.referrer.includes("info");
-if (!ref){
-document.location="/"; 
-}
-}
-checkaccess()
 </script>
 </body>
 </html>
