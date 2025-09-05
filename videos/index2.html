@@ -1,0 +1,252 @@
+<html>
+<head>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<style>
+#header {
+ position: absolute;
+ left: 25%;
+ top: 0%;
+ width: 50%;
+ height: 10%;
+} 
+#button1 {
+ position: absolute;
+ left:  23%;
+ top: -15%;
+ font-size: 20px;
+}
+#button2 {
+ position: absolute;
+ left:  29%;
+ top: -15%;
+ font-size: 20px;
+}
+#button3 {
+ position: absolute;
+ left:  37%;
+ top: -15%;
+ font-size: 20px;
+}
+#search {
+ font-size: 25px;
+}
+#searchbar {
+ position: absolute;
+ top:40%;
+ font-size: 30px;
+ width: 100%;
+ height: 100%;
+ left: 22.5%;
+}
+#searchbutton {
+ margin-left: 15px;
+ font-size: 25px;
+}
+#logo {
+ position: absolute;
+ width: 200px;
+ height: 75px;
+ margin-bottom: 10px;
+}	
+#end {
+ width: 51%;
+ position: relative;
+ top: 11%;
+}
+#line {
+ position: relative;
+ margin-top: 10px;
+ top: 70px;
+}
+
+
+/* */
+#video {
+ position: absolute;
+ left: 25%;
+ top: 10%;
+ width: 30%;
+ height: 40%;
+}
+#player {
+ position: relative;
+ top: 0%;
+}
+#playbutton {
+ position: relative;
+ top: -20px; 
+}
+#gobackbutton {
+ position: relative;
+ top: -20px; 
+ left: -5px;
+}
+#videotime {
+ position: relative;
+ color: white;
+ font-family: Arial;
+ -webkit-text-stroke: 1.5px black;
+ left: 250px;
+ top: -80px;
+}
+#progressbar {
+ position: relative;
+ --color: linear-gradient(#fff8,#fff0);
+ border-style: solid;
+ border-color: black;
+ height: 49px;
+ width:452px;
+ color: red;
+ left: -10px;
+ top: -23px;
+ border-width: 1px;
+ border-radius: 2px;
+}
+@property --grad1 {
+ syntax: '<color>';
+ initial-value: darkgrey;
+ inherits: false;
+}
+@property --grad2 {
+ syntax: '<color>';
+ initial-value: lightgrey;
+ inherits: false;
+}
+
+#progressbar::-webkit-progress-value {
+  background-color: grey;
+}
+
+#progressbar::-moz-progress-value {
+  background-color: grey;
+}
+#progressbar::-moz-progress-bar {
+ background: linear-gradient(var(--grad1), var(--grad2));
+}
+#progressbar::-webkit-progress-bar {
+ background: linear-gradient(var(--grad1), var(--grad2));
+}
+#thebuttons {
+ margin-bottom: -90px;
+}
+#vidtitle {
+ font-family: Arial;
+ font-size: 35px;
+
+ margin-bottom: -10px;
+}
+#vidtitle2 {
+ font-family: Arial;
+ font-size: 25px;
+
+ margin-bottom: -10px;
+}
+#vidtitle3 {
+ font-family: Arial;
+ font-size: 25px;
+ margin-bottom: 0px;
+}
+#viddesc{
+ font-family: Arial;
+ color: grey;
+ font-size: 15px;
+}
+#recommendedvideos {
+  border-style: solid;
+  border-color: black;
+  position: relative;
+  width: 15%;
+  border-width: 1px;
+  border-radius: 2px;
+  height: -25%;
+  left: 60%;
+  top: 11%;
+}
+.thumbnail {
+  margin-top: 15px;
+}
+.thumbnailtitle {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+</style>
+<title> SMG200 World </title>
+</head>
+<body>
+<div id="header">
+<div id="things">
+<img src="smgvidslogo2.png" id="logo">
+<div id="searchbar">
+<input type="text" id="search" name="searchquery" size="44"><button onclick="javascript:outoforder()" id="searchbutton"> Search </button>
+</div>
+<p id="button1"> <a href="javascript:outoforder()"> Home </a></p>
+<p id="button2"> <a href="https://archive.org/details/randomness69-archives_20250503"> Archive </a></p>
+<p id="button3"> <a href="https://randomness69js.github.io/index.html"> Back to main page </a></p>
+</div>
+<hr id="line">
+</div>
+
+<div id="video">
+<video id="player" src="https://randomness69js.github.io/loveletter3.mp4" width="550" height="450"></video>
+<div id="controls">
+<div id="thebuttons">
+<img src="play.png" id="playbutton" onclick="playpause()" width="50">
+<img src="goback.png" id="gobackbutton" onclick="goback()" width="50">
+<progress id="progressbar" value="0" max="100"></progress>
+<h2 id="videotime"> HH:MM:SS </h2>
+</div>
+<h1 id="vidtitle"> Wieerd SMM4 blober And YTP compiration 2</h1>
+
+<h1 id="viddesc">Want higher quality???? Consider donating!!
+</h1>
+</div>
+</div>
+<div id="recommendedvideos">
+<center> <img class="thumbnail" src="https://randomness69js.github.io/videos/thumbnail2.png" onclick="document.location.href='https://randomness69js.github.io/videos/index.html'" width="250"> </center>
+<h1 id="vidtitle2" class="thumbnailtitle"> Compilation #1 </h1> 
+<center> <img class="thumbnail" src="thumbnail.jpg" onclick="outoforder2()" width="250"> </center>
+<h1 id="vidtitle2" class="thumbnailtitle"> Video Title #2</h1> 
+<center> <img class="thumbnail" src="thumbnail.jpg" onclick="outoforder2()" width="250"> </center>
+<h1 id="vidtitle2" class="thumbnailtitle"> Video Title #3 </h1> 
+<center> <img class="thumbnail" src="thumbnail.jpg" onclick="outoforder2()" width="250"> </center>
+<h1 id="vidtitle3" class="thumbnailtitle"> Video Title #4 </h1> 
+
+</div>
+<hr id="end">
+<script>
+function outoforder() {
+ alert("Out of order, be patient")
+}
+function outoforder2() {
+ alert("Something will be here soon.")
+}
+function goback() {
+  document.getElementById("player").currentTime-=5
+  document.getElementById("player").play()
+  document.getElementById("playbutton").src="pause.png"
+}
+function playpause() {
+ vid=document.getElementById("player")
+  if (vid.paused) {
+    vid.play()
+    updatetime()
+  	document.getElementById("playbutton").src="pause.png"
+   } else {
+   	document.getElementById("playbutton").src="play.png"
+   	vid.pause()
+   }
+  }
+function updatetime(){
+ vid=document.getElementById("player")
+ document.getElementById("progressbar").value=((vid.currentTime+1)/(vid.duration)*100)+1
+ var date=new Date(0);
+ date.setSeconds(document.getElementById("player").currentTime);
+ document.getElementById("videotime").innerText=date.toISOString().substring(11, 19);
+}
+document.getElementById("player").addEventListener("timeupdate",()=>{updatetime()})
+
+</script>
+</body>
+</html>
