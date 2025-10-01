@@ -260,6 +260,26 @@
   </head>
   <!--/* please dont ask about the divs. it just works. */-->
   <body>
+   <div id="christmastree">
+    <style>
+     #treeimg {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+     }
+   </style>
+   <img id="treeimg" onclick="javascript:vinesauce()" src='christmastree.gif'>
+   <script>
+     function vinesauce() {
+      let AudNode=document.createElement('audio')
+      AudNode.src="https://randomness69js.github.io/christmastree.mp3"
+      AudNode.play()
+     }
+     const treeimg=document.getElementById("treeimg")
+     treeimg.addEventListener("mouseleave",(event)=>{treeimg.style="transition: 0.3s; transform: scale(1,1);";}); 
+     treeimg.addEventListener("mouseover",(event)=>{treeimg.style="transition: 0.3s; transform: scale(1.2,1.2) translate(-10%, -10%); cursor: pointer;";});
+   </script>
+  </div>
   <button onclick="document.location.href='https://randomness69js.github.io/poopyshitfart.html'"> PoopOPokemAne Card Hole </button>
   <div id="windowdivcont" hidden> 
    <div id="windowdiv">
@@ -284,7 +304,8 @@
      <center> <p onclick="javascript:playsng6()" id="mustext"> About me Page (B3313 - Powerful mario) </p> </center>
      <center> <p onclick="javascript:playsng7()" id="mustext"> Not found (Yume 2kki - Highway TV Room 7) </p> </center>
      <center> <p onclick="javascript:playsng8()" id="mustext"> Spot the difference (Slideshow Whistler - Nintendo DSI) </p> </center>
-     <center> <p onclick="javascript:playsng9()" id="mustext"> New Item (Unnamed Bytebeat Song) </p> </center>
+     <center> <p onclick="javascript:playsng9()" id="mustext"> New Item (Unnamed Bytebeat Song) </p> </center>    
+     <center id="specialsong"> <p onclick="javascript:playsng10()" id="mustext"> Christmas (Jingle Bells) </p> </center>
     </div>
    </div>
   </div>
@@ -374,10 +395,15 @@
    document.getElementsByTagName("audio")[0].src="https://randomness69js.github.io/music/song6.mp3"
    musicplaying=1
    document.getElementById("playbutton").innerText="Pause"
+  }  
+  function playsng10() {
+   document.getElementsByTagName("audio")[0].src="https://randomness69js.github.io/christmas song.mp3"
+   musicplaying=1
+   document.getElementById("playbutton").innerText="Pause"
   }
   </script>
   <audio autoplay loop>
-   <source src="https://files.catbox.moe/bu8lfl.mp3" type="audio/mpeg">
+   <source  id="homemusic" src="https://files.catbox.moe/bu8lfl.mp3" type="audio/mpeg">
   </audio>
    <div id="toptitle">
     <center><img id="smg200icon" src="https://randomness69js.github.io/smg200logo.png"  width="400" height="210"></center>
@@ -442,6 +468,7 @@
     <a href="https://ko-fi.com/randomness69"> <button id="donatebutton">DONATE </button> </a>
     <img onclick="document.location.href='https://randomness69js.github.io/purplefever.html'" id="purplefever" src="purple fever.png">
    </div>
+ 
    <script>
    //I would prefer if you didnt steal my code >:3
    //I would prefer if you didnt steal my code >:3
@@ -453,10 +480,15 @@
     document.getElementById("smg200icon").src="https://randomness69js.github.io/spookysmg200.png"
    }
    if (isJolly==true) {
+    document.getElementById("specialsong").hidden=''
+    document.getElementById("treeimg").hidden=''
     document.getElementById("smg200icon").src="https://randomness69js.github.io/jollysmg200.png"
     document.getElementById("smg200icon").width=document.getElementById("smg200icon").width+70
     document.getElementById("smg200icon").height=document.getElementById("smg200icon").height+40
-
+    document.getElementById("homemusic").src="https://randomness69js.github.io/christmas song.mp3"
+   } else {
+    document.getElementById("specialsong").hidden=true
+    document.getElementById("treeimg").hidden=true
    }
    if (localStorage.getItem("hasRadio")=='true'){
     document.getElementById("button4").hidden=""
