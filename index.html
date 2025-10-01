@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
 <!--
@@ -445,6 +446,18 @@
    //I would prefer if you didnt steal my code >:3
    //I would prefer if you didnt steal my code >:3
    //I would prefer if you didnt steal my code >:3
+   getMonth=new Date().getMonth()
+   isSpooky=getMonth==9
+   isJolly=getMonth==11
+   if (isSpooky==true){
+    document.getElementById("smg200icon").src="https://randomness69js.github.io/spookysmg200.png"
+   }
+   if (isJolly==true) {
+    document.getElementById("smg200icon").src="https://randomness69js.github.io/jollysmg200.png"
+    document.getElementById("smg200icon").width=document.getElementById("smg200icon").width+70
+    document.getElementById("smg200icon").height=document.getElementById("smg200icon").height+40
+
+   }
    if (localStorage.getItem("hasRadio")=='true'){
     document.getElementById("button4").hidden=""
    } else {
@@ -488,74 +501,101 @@
     localStorage.setItem("hasRadio", false);  
    }
    var splashtext = document.getElementById("version")
-   var randomvalue=Math.round(Math.random(21)*21)
-   if (randomvalue==0) {
-    splashtext.innerText="i made tis website"
-   }
-   if (randomvalue==1) {
-    splashtext.innerText="lol"
-   }   
-   if (randomvalue==2) {
-    splashtext.innerText="Welcome to my world!"
-   }
-   if (randomvalue==3) {
-    splashtext.innerText="Cream of mushroom"
-   }
-   if (randomvalue==4) {
-    splashtext.innerText="Once a winner, always a winner."
-   }
-   if (randomvalue==5) {
-    splashtext.innerText="official home of smg200"
-   }
-   if (randomvalue==6) {
-    splashtext.innerText="YTP is dead."
-   }
-   if (randomvalue==7) {
-    splashtext.innerText="Please come to the castle."
-   }
-   if (randomvalue==8) {
-    splashtext.innerText="Makes your teeth turn grey!"
-   }
-   if (randomvalue==9) {
-    splashtext.innerText="Welcome!"
-   } 
-   if (randomvalue==10) {
-    splashtext.innerText="Dead end."
-   }
-   if (randomvalue==11) {
-    splashtext.innerText="c0debreaker"
-   }
-   if (randomvalue==12) {
-    splashtext.innerText="WHY ARE YOU BUYING CLOTHES AT THE SOUP STORE"
-   }
-   if (randomvalue==13) {
-    splashtext.innerText="I want you to keep your crummy dog off of my brand new carpet!"
-   }
-   if (randomvalue==14) {
-    splashtext.innerText="why do i feel so numb"
-   }
-   if (randomvalue==15) {
-    splashtext.innerText="I knew it. Your just another zombie."
-   }
-   if (randomvalue==16) {
-    splashtext.innerText="join my world. become insane."
-   }   
-   if (randomvalue==17) {
-    splashtext.innerText="gabario"
-   } 
-   if (randomvalue==18) {
-    splashtext.innerText="Day "+((Math.round(Math.random(6)*6))+1).toString()+" has started."
-   }
-   if (randomvalue==19) {
-    splashtext.innerText="Make sure to run a CHKDSK on it!"
-   }
-   if (randomvalue==20) {
-    splashtext.innerText="run away and hide"
-   }
-   if (randomvalue==21) {
-    splashtext.innerText="Refresh the page!"
-   }
 
+   var randomvalue=Math.round(Math.random(21)*21)
+   if (isSpooky||isJolly) {
+    var randomvalue=Math.round(Math.random(3)*3)   
+   }
+   if ((!isSpooky)&&(!isJolly)) {
+    if (randomvalue==0) {
+     splashtext.innerText="i made tis website"
+    }
+    if (randomvalue==1) {
+     splashtext.innerText="lol"
+    }    
+    if (randomvalue==2) {
+      splashtext.innerText="Welcome to my world!"
+    }
+    if (randomvalue==3) {
+     splashtext.innerText="Cream of mushroom"
+    }
+    if (randomvalue==4) {
+     splashtext.innerText="Once a winner, always a winner."
+    }
+    if (randomvalue==5) {
+     splashtext.innerText="official home of smg200"
+    }
+    if (randomvalue==6) {
+     splashtext.innerText="YTP is dead."
+    }
+    if (randomvalue==7) {
+     splashtext.innerText="Please come to the castle."
+    }
+    if (randomvalue==8) {
+     splashtext.innerText="Makes your teeth turn grey!"
+    }
+    if (randomvalue==9) {
+     splashtext.innerText="Welcome!"
+    } 
+    if (randomvalue==10) {
+     splashtext.innerText="Dead end."
+    }
+    if (randomvalue==11) {
+     splashtext.innerText="c0debreaker"
+    }
+    if (randomvalue==12) {
+     splashtext.innerText="WHY ARE YOU BUYING CLOTHES AT THE SOUP STORE"
+    }
+    if (randomvalue==13) {
+     splashtext.innerText="I want you to keep your crummy dog off of my brand new carpet!"
+    }
+    if (randomvalue==14) {
+     splashtext.innerText="why do i feel so numb"
+    }
+    if (randomvalue==15) {
+     splashtext.innerText="I knew it. Your just another zombie."
+    }
+    if (randomvalue==16) {
+     splashtext.innerText="join my world. become insane."
+    }   
+    if (randomvalue==17) {
+     splashtext.innerText="gabario"
+    } 
+    if (randomvalue==18) {
+     splashtext.innerText="Day "+((Math.round(Math.random(6)*6))+1).toString()+" has started."
+    }
+    if (randomvalue==19) {
+     splashtext.innerText="Make sure to run a CHKDSK on it!"
+    }
+    if (randomvalue==20) {
+     splashtext.innerText="run away and hide"
+    }
+    if (randomvalue==21) {
+     splashtext.innerText="Refresh the page!"
+    }
+   }
+   if (isSpooky) {
+    if (randomvalue==0) {
+     splashtext.innerText="Happy halloween!"
+    }
+    if (randomvalue==1) {
+     splashtext.innerText="Trick-or-treat!"
+    }   
+    if (randomvalue==2) {
+     splashtext.innerText="Boo!"
+    }
+   }  
+   if (isJolly) {
+    if (randomvalue==0) {
+     splashtext.innerText="Seasons greetings!"
+    }
+    if (randomvalue==1) {
+     splashtext.innerText="Merry Christmas!"
+    }   
+    if (randomvalue==2) {
+     splashtext.innerText="Ho ho ho!"
+    }
+   }
    function critical() {
     if (document.getElementById("windowdivcont")) {
     document.getElementById("windowdivcont").remove()
