@@ -771,5 +771,103 @@ console.log("test")
     }
     }
     </script>
+    <script>
+     //Why do I implement it like this?
+     //Because I have special plans..
+     madeOneWindow=0
+     function createErrorWindow(windowerrtitle, windowerrtext, windowerrbutton, windowerrtextcolor, windowerricon) {
+     if (madeOneWindow==0) {
+      //Make all the basic stuff
+      madeOneWindow=1
+      errordiv = document.createElement("div");
+      errordivcont = document.createElement("div");
+      errortopcont = document.createElement("div");
+      errortop = document.createElement("div");
+      errortoptext = document.createElement("h3")
+      errorcontents = document.createElement("div")
+      //Make the inside stuff
+      errorcontentdummy = document.createElement("div")
+      errorcontentbuttoncenter = document.createElement("center")
+      errorcontenttextcenter = document.createElement("center")
+      errorcontentbutton = document.createElement("button")
+      errorcontentbuttonlink = document.createElement("a")
+      errorcontenticon = document.createElement("img")
+      errorcontenttext = document.createElement("p")
+      //Add thy attributes to the Main stuff
+      errordiv.id="errdiv" 
+      errordiv.style="position: absolute; border: 6px solid black; border-radius: 2px; padding: 0px; margin: 0px 0; top: 50%; left: 50%; transform: translate(-50%, -50%); box-shadow: 0px 0px 15px black;"
+      errordivcont.id="errdivcont"
+      errordivcont.style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; z-index: 8;"
+      errortopcont.id="errtopcont"
+      errortopcont.style="margin-bottom: 0px;"
+      errortop.id="errtop"
+      errortop.style="background-image: linear-gradient(to right, grey , darkgrey); margin-top: 0px; height: 35px; margin-bottom: 0px; border-style: solid; border-width: 0px 0px 5px 0px;"
+      errortoptext.id="errtoptext"
+      errortoptext.style="font-family: Courier New; color: white; margin-left: 10px; font-size: 20px; padding: 4px 0; margin-top: 0px; margin-bottom: 0px; margin-right: 0px; -webkit-text-stroke: 1px black;"
+      errortoptext.innerText=windowerrtitle.toString()
+      errorcontents.id="errcontents"
+      errorcontents.style="background: lightgrey; margin-bottom: 0px; height: 100%;"
+      //Append Thy main Stuff to teh body
+      document.body.appendChild(errordivcont)
+      document.getElementById("errdivcont").appendChild(errordiv)
+      document.getElementById("errdiv").appendChild(errortopcont)
+      document.getElementById("errtopcont").appendChild(errortop)
+      document.getElementById("errtop").appendChild(errortoptext)
+      document.getElementById("errdiv").appendChild(errorcontents)
+      //Add thy attribues to the Inside stuff
+      document.body.style="pointer-events: none;"
+      errorcontenttextcenter.id="errcontenttextcenter"
+      errorcontenttext.id="errcontenttext"
+      errorcontentdummy.id="errcontentdummy"
+      errorcontentbutton.id="errcontentbutton"
+      errorcontentbuttonlink.id="errcontentbuttonlink"
+      errorcontentbuttoncenter.id="errcontentbuttoncenter"
+      errorcontentbuttonlink.href="javascript:window.location.reload()"
+      errorcontentbutton.innerText=windowerrbutton.toString()
+      errorcontentdummy.style="height: 10px; width: 850px;"
+      errorcontenttext.innerText=windowerrtext.toString()
+      errorcontentbutton.style="font-size: 20px; margin-top: 10px; margin-bottom: 10px; pointer-events: auto"
+      errorcontenttext.style="font-family: sillymariofont; font-size: 25px; margin-bottom: 0px; color: "+windowerrtextcolor.toString()+"; -webkit-text-stroke: 1.5px black;"
+      errorcontenticon.id="errcontenticon"
+      let erroraud=document.createElement('audio')
+      if (windowerricon==1) {
+       errorcontenticon.src="errorcritical.png"
+       erroraud.src="errorsound.mp3"
+       erroraud.play()
+      }
+      if (windowerricon==0) {
+       errorcontenticon.src="errorwarning.png"
+       erroraud.src="warningsound.mp3"
+       erroraud.play()
+      }
+      filterdiv=document.createElement("div")
+      filterdiv.style="position: absolute; top: 0%; left: 0%; backdrop-filter: grayscale(100%); z-index: 4; width: 100%; min-height: 100vh;"
+      document.getElementsByTagName("audio")[0].pause()
+      //Append Thy Inside stuff to teh Main stuff
+      document.getElementById("errcontents").appendChild(errorcontentdummy)
+      document.getElementById("errcontents").appendChild(errorcontenttextcenter)
+      document.getElementById("errcontenttextcenter").appendChild(errorcontenticon)
+      document.getElementById("errcontenttextcenter").appendChild(errorcontenttext)
+      document.getElementById("errcontents").appendChild(errorcontentbuttonlink)
+      document.getElementById("errcontentbuttonlink").appendChild(errorcontentbuttoncenter)
+      document.getElementById("errcontentbuttoncenter").appendChild(errorcontentbutton)
+      document.body.appendChild(filterdiv)
+      } else {
+      console.error("You cannot create more then one window.")
+     }
+    }
+    //Compare this with a time API with our computers local time
+    new Date().getUTCHours()
+    const timecall=await fetch("https://worldtimeapi.org/api/timezone/utc",{method: "GET", body: JSON.stringify()})
+    const timejson=timecall.json()
+    timelocal=new Date().getUTCDay()
+    timejson.then(response=>{timeinternet=response.day_of_week; istimecorrect=timelocal==timeinternet; stopTimeTravel()})
+    function stopTimeTravel() {
+    if (istimecorrect==false) {
+     //Call this sweet and simple function to make an error and force to us to correct our clocks
+     createErrorWindow("Error","Your computers date and time are set incorrectly"+"\n"+"Please update your computers clock"+"\n"+"If this error keeps appearing, try disabling your VPN","Refresh","red",1)
+    }
+    }
+    </script>
   </body>
 </html>
