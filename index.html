@@ -859,6 +859,7 @@ console.log("test")
     //Compare this with a time API with our computers local time
     async function CheckForTimeTravellers() {
      new Date().getUTCHours()
+     istimecorrect=true
      function stopTimeTravel(isError) {
       if (istimecorrect==false) {
       //Call this sweet and simple function to make an error and force to us to correct our clocks
@@ -869,7 +870,7 @@ console.log("test")
        }
       }
      }
-     const timecall=await fetch("https://worldtimeapi.org/api/timezone/utc",{method: "GET", body: JSON.stringify()}).catch(error=>{timeinternet=new Date().getDay; stopTimeTravel(1)})
+     const timecall=await fetch("https://worldtimeapi.org/api/timezone/utc",{method: "GET", body: JSON.stringify()}).catch(error=>{istimecorrect=false; stopTimeTravel(1)})
      const timejson=timecall.json()
      timelocal=new Date().getUTCDay()
      timejson.then(response=>{timeinternet=response.day_of_week; istimecorrect=timelocal==timeinternet; stopTimeTravel(0)}).catch(error => {timeinternet=timelocal; stopTimeTravel(1)});
