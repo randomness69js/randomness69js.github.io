@@ -857,17 +857,20 @@ console.log("test")
      }
     }
     //Compare this with a time API with our computers local time
-    new Date().getUTCHours()
-    const timecall=await fetch("https://worldtimeapi.org/api/timezone/utc",{method: "GET", body: JSON.stringify()})
-    const timejson=timecall.json()
-    timelocal=new Date().getUTCDay()
-    timejson.then(response=>{timeinternet=response.day_of_week; istimecorrect=timelocal==timeinternet; stopTimeTravel()})
-    function stopTimeTravel() {
-    if (istimecorrect==false) {
-     //Call this sweet and simple function to make an error and force to us to correct our clocks
-     createErrorWindow("Error","Your computers date and time are set incorrectly"+"\n"+"Please update your computers clock"+"\n"+"If this error keeps appearing, try disabling your VPN","Refresh","red",1)
+    async function CheckForTimeTravellers() {
+     new Date().getUTCHours()
+     const timecall=await fetch("https://worldtimeapi.org/api/timezone/utc",{method: "GET", body: JSON.stringify()})
+     const timejson=timecall.json()
+     timelocal=new Date().getUTCDay()
+     timejson.then(response=>{timeinternet=response.day_of_week; istimecorrect=timelocal==timeinternet; stopTimeTravel()})
+     function stopTimeTravel() {
+     if (istimecorrect==false) {
+      //Call this sweet and simple function to make an error and force to us to correct our clocks
+      createErrorWindow("Error","Your computers date and time are set incorrectly"+"\n"+"Please update your computers clock"+"\n"+"If this error keeps appearing, try disabling your VPN","Refresh","red",1)
+     }
+     }
     }
-    }
+    CheckForTimeTravellers()
     </script>
   </body>
 </html>
