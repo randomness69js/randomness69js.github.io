@@ -857,26 +857,25 @@ console.log("test")
      }
     }
     //Compare this with a time API with our computers local time
-    async function CheckForTimeTravellers() {
-     new Date().getUTCHours()
-     istimecorrect=true
-     function stopTimeTravel(isError) {
-      if (istimecorrect==false) {
+    // async function CheckForTimeTravellers() {
+    // new Date().getUTCHours()
+    // istimecorrect=true
+    // function stopTimeTravel(isError) {
+    //  if (istimecorrect==false) {
       //Call this sweet and simple function to make an error and force to us to correct our clocks
-       if (isError==0) {
-        createErrorWindow("Error","Your computers date and time are set incorrectly"+"\n"+"Please update your computers clock"+"\n"+"If this error keeps appearing, try disabling your VPN","Refresh","red",1)
-       } else {
-        createErrorWindow("Error","Unable to fetch time servers"+"\n"+"Your computers date and time might be set incorrectly"+"\n"+"Please update your computers clock"+"\n"+"If this error keeps appearing, try disabling your VPN","Refresh","red",1)  
-       }
-      }
-     }
-     const timecall=await fetch("https://worldtimeapi.org/api/timezone/utc",{method: "GET", body: JSON.stringify()}).catch(error=>{istimecorrect=false; stopTimeTravel(1)})
-     const timejson=timecall.json()
-     timelocal=new Date().getUTCDay()
-     timejson.then(response=>{timeinternet=response.day_of_week; istimecorrect=timelocal==timeinternet; stopTimeTravel(0)}).catch(error => {timeinternet=timelocal; stopTimeTravel(1)});
-     
-    }
-    CheckForTimeTravellers()
+    //   if (isError==0) {
+    //    createErrorWindow("Error","Your computers date and time are set incorrectly"+"\n"+"Please update your computers clock"+"\n"+"If this error keeps appearing, try disabling your VPN","Refresh","red",1)
+    //   } else {
+    //    createErrorWindow("Error","Unable to fetch time servers"+"\n"+"Your computers date and time might be set incorrectly"+"\n"+"Please update your computers clock"+"\n"+"If this error keeps appearing, try disabling your VPN","Refresh","red",1)  
+    //   }
+    //  }
+    // }
+    // const timecall=await fetch("https://worldtimeapi.org/api/timezone/utc",{method: "GET", body: JSON.stringify()}).catch(error=>{istimecorrect=false; stopTimeTravel(1)})
+    // const timejson=timecall.json()
+    // timelocal=new Date().getUTCDay()
+    // timejson.then(response=>{timeinternet=response.day_of_week; istimecorrect=timelocal==timeinternet; stopTimeTravel(0)}).catch(error => {timeinternet=timelocal; stopTimeTravel(1)});
+    // }
+    // CheckForTimeTravellers()
     </script>
   </body>
 </html>
