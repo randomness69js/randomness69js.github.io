@@ -1,0 +1,68 @@
+<html>
+ <head>
+  <title> Website Compatibility Test </title>
+  <style>
+    #title {
+     font-size: 50px;
+    }
+    .textblue {
+     color: blue;
+    }
+    .textyellow {
+     color: orange;
+    }
+    .textred {
+     color: red;
+    }    
+    .textgreen {
+     color: green;
+    }
+  </style>
+ </head>
+ <body>
+  <h1 id="title"> Website compatibility test </h1>
+  <hr>
+  <h1 id="line1" class="textblue"> Processing. </h1>
+  <h1 id="line2" class="textblue"> Processing. </h1>
+  <h1 id="line3" class="textblue"> Processing. </h1>
+  <h1 id="line4" class="textblue"> Processing. </h1>
+  <h1 id="line5" class="textblue"> Processing. </h1>  
+  <h1 id="line6" class="textblue"> Processing. </h1> 
+  <h3 id="line7"> Processing... </h1>
+  <hr>
+  <script>
+  catboxspeed="Processing"
+  dcatboxspeed="Ok"
+  fetch("https://files.catbox.moe/bu8lfl.mp3",{signal:AbortSignal.timeout(5000)}).catch(error=>{dcatboxspeed="Slow"})
+  fetch("https://files.catbox.moe/bu8lfl.mp3",{signal:AbortSignal.timeout(12000)}).catch(error=>{dcatboxspeed="Offline"})
+  setTimeout(()=>{catboxspeed=dcatboxspeed},15000)
+  testaudio = document.createElement('audio');
+  testaudio.autoplay=true
+  autoplayres=true
+  testaudio.play().then(result=>{}).catch(error=>{autoplayres=false;})
+  setTimeout(() => {autoplayworks=autoplayres},1000)
+  webbglworks=true
+  webglcanvas=document.createElement("canvas")
+  var webgl = webglcanvas.getContext("webgl") 
+  if (webgl && webgl instanceof WebGLRenderingContext) {
+   webglworks=true
+  } else {
+   webglworks=false
+  }
+  cookieswork=navigator.cookieEnabled
+  ismobile=navigator.platform=="iPhone"||navigator.platform=="Android"
+  screeniscorrect=!(window.innerWidth<1200||window.innerHeight<830)
+  setTimeout(() => {browserisok()},2000)
+  function browserisok(){
+   setTimeout(() => {document.getElementById("line7").innerText=navigator.userAgent},100)
+   setTimeout(() => {if(webglworks==true) {document.getElementById("line1").innerText="WebGL test Passed!"; document.getElementById("line1").className="textgreen"}else{document.getElementById("line1").innerText="WebGL test failed: Some features in the website wont work without WebGL."; document.getElementById("line1").className="textred"}},1000)
+   setTimeout(() => {if(autoplayworks==true) {document.getElementById("line2").innerText="Autoplay test Passed!"; document.getElementById("line2").className="textgreen"}else{document.getElementById("line2").innerText="Autoplay test failed: You wont be able to progress in the website without autoplay."; document.getElementById("line2").className="textred"}},4000)
+   setTimeout(() => {if(cookieswork==true) {document.getElementById("line3").innerText="Cookie test Passed!"; document.getElementById("line3").className="textgreen"}else{document.getElementById("line3").innerText="Cookie test failed: You will not be able to save data or progress in the website without cookies enabled."; document.getElementById("line3").className="textred"}},7000)
+   setTimeout(() => {if(ismobile==false) {document.getElementById("line4").innerText="Supported device test Passed!"; document.getElementById("line4").className="textgreen"}else{document.getElementById("line4").innerText="Unsupported device detected: You will not be able to progress in the website without a mouse and keyboard."; document.getElementById("line4").className="textred"}},10000)
+   setTimeout(() => {if(screeniscorrect==true) {document.getElementById("line5").innerText="Screen test Passed!"; document.getElementById("line5").className="textgreen"}else{document.getElementById("line5").innerText="Screen test failed: Your screen size is too small, website visuals may break."; document.getElementById("line5").className="textred"}},13000) 
+   setTimeout(() => {if(catboxspeed=="Ok") {document.getElementById("line6").innerText="Catbox test Passed!"; document.getElementById("line6").className="textgreen"} else if (catboxspeed=="Slow") {document.getElementById("line6").innerText="Catbox test Passed however: Your connection is extremely slow."; document.getElementById("line6").className="textyellow" } else if (catboxspeed=="Offline") {document.getElementById("line6").innerText="Catbox test failed: Couldnt reach servers."; document.getElementById("line6").className="textred"}},15000)
+   }
+   </script>
+ </body>
+</html>
+
