@@ -878,140 +878,145 @@ console.log("test")
     // CheckForTimeTravellers()
     </script>
     <script>
-    errtime2=10
+    errtime2=10;
     document.body.style="overflow: hidden;"
     function playsound() {
-     err=new Audio("error.mp3")
-     err.play()
+     err=new Audio("error.mp3");
+     err.play();
     } 
     function playsound2() {
-     err2=new Audio("congratulations.mp3")
-     err2.play()
+     err2=new Audio("congratulations.mp3");
+     err2.play();
     }
     function errorspaminit() {
-     document.body.style="overflow: hidden;"
-     c=document.createElement("canvas")
-     c.style="position: absolute; top: 0%; left: 0%;"
-     c.id="errorcanvas"
-     c.width=window.innerWidth
-     c.height=window.innerHeight
-     document.body.appendChild(c) 
-     document.getElementsByTagName("audio")[0].pause()
+     document.body.style="overflow: hidden;";
+     c=document.createElement("canvas");
+     c.style="position: absolute; top: 0%; left: 0%;";
+     c.id="errorcanvas";
+     c.width=window.innerWidth;
+     c.height=window.innerHeight;
+     document.body.appendChild(c);
+     document.getElementsByTagName("audio")[0].pause();
      ctx = c.getContext("2d");
-     errimg = document.createElement("img")  
-     newerrimg = document.createElement("img")
+     errimg = document.createElement("img");
+     newerrimg = document.createElement("img");
      errimg.src="popup1.png";
      newerrimg.src="popup1.png";
-     setTimeout(()=>{ctx.drawImage(errimg, 10, 10);errimg.src="popup2.png";playsound();},1000)
-     setTimeout(()=>{ctx.drawImage(errimg, 40, 40);errimg.src="popup3.png";playsound();},3000)
-     setTimeout(()=>{ctx.drawImage(errimg, 70, 70);errimg.src="popup4.png";playsound();},4000)
-     setTimeout(()=>{ctx.drawImage(errimg, 100, 100);errimg.src="popup5.png";playsound();},5000)
-     setTimeout(()=>{ctx.drawImage(errimg, 130, 130);errimg.src="popup6.png";playsound();},5700)
-     setTimeout(()=>{ctx.drawImage(errimg, 160, 160);errimg.src="popup7.png";setTimeout(errorspamloop, 0);playsound()},6200)
-     setTimeout(()=>{initnotifspam();playsound2()},15500)
-     setTimeout(()=>{ctx.drawImage(errimg, 160, 160);playsound()},9200)
+     setTimeout(()=>{ctx.drawImage(errimg, 10, 10);errimg.src="popup2.png";playsound();},1000);
+     setTimeout(()=>{ctx.drawImage(errimg, 40, 40);errimg.src="popup3.png";playsound();},3000);
+     setTimeout(()=>{ctx.drawImage(errimg, 70, 70);errimg.src="popup4.png";playsound();},4000);
+     setTimeout(()=>{ctx.drawImage(errimg, 100, 100);errimg.src="popup5.png";playsound();},5000);
+     setTimeout(()=>{ctx.drawImage(errimg, 130, 130);errimg.src="popup6.png";playsound();},5700);
+     setTimeout(()=>{ctx.drawImage(errimg, 160, 160);errimg.src="popup7.png";setTimeout(errorspamloop, 0);playsound()},6200);
+     setTimeout(()=>{initnotifspam();playsound2()},15500);
+     setTimeout(()=>{ctx.drawImage(errimg, 160, 160);playsound()},9200);
     }
-    errtime=600
-    errloopcounter=0
-    imgpopup1=document.createElement("img");imgpopup1.src="popup1.png" 
-    imgpopup2=document.createElement("img");imgpopup2.src="popup2.png" 
-    imgpopup3=document.createElement("img");imgpopup3.src="popup3.png"
-    imgpopup4=document.createElement("img");imgpopup4.src="popup4.png" 
-    imgpopup5=document.createElement("img");imgpopup5.src="popup5.png" 
-    imgpopup6=document.createElement("img");imgpopup6.src="popup6.png" 
-    imgpopup7=document.createElement("img");imgpopup7.src="err1.png" 
-    imgpopup8=document.createElement("img");imgpopup8.src="err2.png" 
-    imgpopup1a=document.createElement("img");imgpopup1a.src="err3.png" 
-    imgpopup2a=document.createElement("img");imgpopup2a.src="err4.png" 
-    imgpopup3a=document.createElement("img");imgpopup3a.src="err5.png"
+    errtime=600;
+    errloopcounter=0;
+    imgpopup1=document.createElement("img");imgpopup1.src="popup1.png"; 
+    imgpopup2=document.createElement("img");imgpopup2.src="popup2.png"; 
+    imgpopup3=document.createElement("img");imgpopup3.src="popup3.png";
+    imgpopup4=document.createElement("img");imgpopup4.src="popup4.png"; 
+    imgpopup5=document.createElement("img");imgpopup5.src="popup5.png"; 
+    imgpopup6=document.createElement("img");imgpopup6.src="popup6.png"; 
+    imgpopup7=document.createElement("img");imgpopup7.src="err1.png"; 
+    imgpopup8=document.createElement("img");imgpopup8.src="err2.png"; 
+    imgpopup1a=document.createElement("img");imgpopup1a.src="err3.png"; 
+    imgpopup2a=document.createElement("img");imgpopup2a.src="err4.png";
+    imgpopup3a=document.createElement("img");imgpopup3a.src="err5.png";
      errorspamloop=function() {  
-      imgpopupnum=imgpopup1
+      imgpopupnum=imgpopup1;
       imgrandom=Math.round(Math.random(8)*8);if(imgrandom==0){imgpopupnum=imgpopup1};if(imgrandom==1){imgpopupnum=imgpopup2};if(imgrandom==2){imgpopupnum=imgpopup3};if(imgrandom==3){imgpopupnum=imgpopup4};if(imgrandom==4){imgpopupnum=imgpopup5};if(imgrandom==6){imgpopupnum=imgpopup7};if(imgrandom==7){imgpopupnum=imgpopup8}
-      errtime-=17
+      errtime-=17;
       if (errtime<0) {
-   	   errtime2=25
+   	   errtime2=25;
       } else {
-       errtime2=errtime
+       errtime2=errtime;
       }
-      playsound()
-      errloopcounter+=1
+      playsound();
+      errloopcounter+=1;
       ctx.drawImage(imgpopupnum, Math.random(c.width)*c.width, Math.random(c.height)*c.height);    
       if (errtime>-1500) {
        setTimeout(errorspamloop, errtime2);
       } else {
-   	   errorfinalloop()
+   	   errorfinalloop();
       }
     }
     function errorfinalloop() {  
-     setTimeout(()=>{ctx2.drawImage(imgpopup1a, c.width/3, c.height/3);playsound()},100)  
-     setTimeout(()=>{ctx2.drawImage(imgpopup2a, c.width/2.7, c.height/2.7);playsound()},200) 
-     setTimeout(()=>{ctx2.drawImage(imgpopup3a, c.width/2.2, c.height/2.5);playsound()},300) 
-     bsod=document.createElement("img")
-     bsod.src="bsod.png"
-     bsod.height=c.height 
-     bsod.width=c.width
-     bsod.style="position: absolute; top: 0%; left: 0%; z-index: 9999999; cursor: none;"
-     frerr=new Audio("freezeerror.mp3")
+     setTimeout(()=>{ctx2.drawImage(imgpopup1a, c.width/3, c.height/3);playsound()},100);
+     setTimeout(()=>{ctx2.drawImage(imgpopup2a, c.width/2.7, c.height/2.7);playsound()},200);
+     setTimeout(()=>{ctx2.drawImage(imgpopup3a, c.width/2.2, c.height/2.5);playsound()},300);
+     bsod=document.createElement("img");
+     bsod.src="bsod.png";
+     bsod.height=c.height;
+     bsod.width=c.width;
+     bsod.style="position: absolute; top: 0%; left: 0%; z-index: 9999999; cursor: none;";
+     frerr=new Audio("freezeerror.mp3");
      frerr2=new Audio("winnerfreeze.mp3"); 
-     localStorage.clear()
-     sessionStorage.clear()
-     frerr.play()
-     localStorage.setItem("seenad",1)
-     frerr.addEventListener('ended',()=>{console.log("Hello!"); window.location.reload()})
-     setTimeout(()=>{; document.body.appendChild(bsod);  err2.pause(); frerr2.play();document.body.style="overflow: hidden; background-image: none; background-color: #000082;"},500)
+     localStorage.clear();
+     sessionStorage.clear();
+     frerr.play();
+     localStorage.setItem("seenad",1);
+     frerr.addEventListener('ended',()=>{console.log("Hello!"); window.location.reload()});
+     setTimeout(()=>{; document.body.appendChild(bsod);  err2.pause(); frerr2.play();document.body.style="overflow: hidden; background-image: none; background-color: #000082;"},500);
     }
     function popupad() {
-     errorspaminit()
+     repeataudio.pause();
+     errorspaminit();
     }
     function createmousebait() {
-     addiv=document.createElement("div")
-     addiv.id="addiv"
-     document.body.appendChild(addiv)
-     adimg=document.createElement("img")
-     adimg.id="adimg"
-     adimg.style="position: absolute; top: 60%; left: 10%"
-     adimg.src="mousebait.gif"
-     document.getElementById("addiv").appendChild(adimg)
+     addiv=document.createElement("div");
+     addiv.id="addiv";
+     document.body.appendChild(addiv);
+     adimg=document.createElement("img");
+     adimg.id="adimg";
+     adimg.style="position: absolute; top: 60%; left: 10%";
+     adimg.src="mousebait.gif";
+     document.getElementById("addiv").appendChild(adimg);
+     repeataudio=document.createElement("audio");
+     repeataudio.src="youwon.mp3";
+     repeataudio.loop=true;
+     repeataudio.play();
      adimg.onclick = function() {
       popupad()
      }
     }
     //notifspam
     function initnotifspam() { 
-     notifimg2=document.createElement("img")
-     notifimg2.src="popup8.png" 
-     cc2=document.createElement("canvas")
-     cc2.style="position: absolute; top: 0%; left: 0%;"
-     cc2.id="notifcanvas"
-     cc2.width=window.innerWidth
-     cc2.height=window.innerHeight
-     document.body.appendChild(cc2)
+     notifimg2=document.createElement("img");
+     notifimg2.src="popup8.png";
+     cc2=document.createElement("canvas");
+     cc2.style="position: absolute; top: 0%; left: 0%;";
+     cc2.id="notifcanvas";
+     cc2.width=window.innerWidth;
+     cc2.height=window.innerHeight;
+     document.body.appendChild(cc2);
      ctx2 = cc2.getContext("2d");
-     notifimg = document.createElement("img")  
+     notifimg = document.createElement("img");
      notifimg.src="popup7.png";
-     win1x=0
-     win1y=0
-     win1xspeed=25
-     win1yspeed=25  
+     win1x=0;
+     win1y=0;
+     win1xspeed=25;
+     win1yspeed=25;  
      ctx2.drawImage(notifimg, win1x, win1y);  
-     setTimeout(()=>{ctx2.drawImage(notifimg2, 10, 10);},500)
-     setTimeout(()=>{ctx2.drawImage(notifimg2, 40, 40);},600)
-     setTimeout(()=>{ctx2.drawImage(notifimg2, 70, 70);},700)
-     setTimeout(()=>{ctx2.drawImage(notifimg2, 100, 100);},800)
-     setTimeout(()=>{ctx2.drawImage(notifimg2, 130, 130);},900)
+     setTimeout(()=>{ctx2.drawImage(notifimg2, 10, 10);},500);
+     setTimeout(()=>{ctx2.drawImage(notifimg2, 40, 40);},600);
+     setTimeout(()=>{ctx2.drawImage(notifimg2, 70, 70);},700);
+     setTimeout(()=>{ctx2.drawImage(notifimg2, 100, 100);},800);
+     setTimeout(()=>{ctx2.drawImage(notifimg2, 130, 130);},900);
      setInterval(loopy,20);
     }
     function loopy() {
-     win1x+=win1xspeed
-     win1y+=win1yspeed
-     if (win1x>window.innerWidth-311) { win1xspeed=-25}
-     if (win1y>window.innerHeight-157) { win1yspeed=-25}
-     if (win1y<0){win1yspeed=+25}
-     if (win1x<0){win1xspeed=+25}
+     win1x+=win1xspeed;
+     win1y+=win1yspeed;
+     if (win1x>window.innerWidth-311) { win1xspeed=-25};
+     if (win1y>window.innerHeight-157) { win1yspeed=-25};
+     if (win1y<0){win1yspeed=+25};
+     if (win1x<0){win1xspeed=+25};
      ctx2.drawImage(notifimg, win1x, win1y);
     } 
     if (Math.round(Math.random(150)*150)==2&&(((localStorage.getItem("seenad")==null))||(localStorage.getItem("seenad")==0))) {
-     createmousebait()
+     createmousebait();
     }
     </script>
   </body>
