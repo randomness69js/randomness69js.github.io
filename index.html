@@ -895,7 +895,8 @@ console.log("test")
      c.id="errorcanvas"
      c.width=window.innerWidth
      c.height=window.innerHeight
-     document.body.appendChild(c)
+     document.body.appendChild(c) 
+     document.getElementsByTagName("audio")[0].pause()
      ctx = c.getContext("2d");
      errimg = document.createElement("img")  
      newerrimg = document.createElement("img")
