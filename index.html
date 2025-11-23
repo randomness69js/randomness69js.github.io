@@ -535,7 +535,7 @@
    }
    var splashtext = document.getElementById("version")
 
-   var randomvalue=Math.round(Math.random(26)*26)
+   var randomvalue=Math.round(Math.random(27)*27)
    if (isSpooky||isJolly) {
     var randomvalue=Math.round(Math.random(3)*3)   
    }
@@ -616,11 +616,15 @@
      splashtext.innerText="The pursuit of life is more dangerous then a life in pursuit."
     }    
     if (randomvalue==25) {
-     splashtext.innerText="Woah-Hoh HH! Looks like you put on a few... TV's..."
-    }    
+     splashtext.innerText="Woah-Ho HH! Looks like you put on a few.. TV's...!"
+    }        
     if (randomvalue==26) {
+     splashtext.innerText="I am a robot from outer space!"
+    }
+    if (randomvalue==27) {
      splashtext.innerText="Dont move. Stay still."
     }   
+
    }
    if (isSpooky) {
     if (randomvalue==0) {
