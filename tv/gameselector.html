@@ -1,3 +1,4 @@
+
 <html>
 <head name="viewport" content="initial-scale=12">
 <style>
@@ -74,6 +75,10 @@ img {
 //I HOPE THIS MESSY CODE DOESNST MAKE ME YANDARAREDEV 2.0
 //I TRIED TO MAKE IT AS CLEAN AS I CAN
 gamenum=1
+gamenumlim=5
+if (localStorage.getItem("endingBgotten")=='true'||localStorage.getItem("endingBgotten")=='1') {
+ gamenumlim=6
+}
 function left(){
  if (gamenum>1) {
  	gamenum-=1
@@ -81,7 +86,7 @@ function left(){
  update()
 }
 function right(){
- if (gamenum<5) {
+ if (gamenum<gamenumlim) {
  	gamenum+=1
  }
  update()
