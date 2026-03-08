@@ -1,3 +1,4 @@
+
 <html>
 <head>
 <title> Game selector. </title>
@@ -18,6 +19,16 @@
   top: 45%;
   width: 17%;
   height: 25%;
+  z-index: 3;
+ }
+ #magnify {
+  position: absolute; 
+  left: 57.5%;
+
+  top: 65%;
+  width: 5%;
+  height: 7%;
+  transform: rotateX(40deg) rotateZ(15deg) scale(0.8);
   z-index: 3;
  }
  #screen {
@@ -56,12 +67,27 @@
  <img src="https://randomness69js.github.io/tv/tv.png" id="tv"> 
  <a id="tvhref" href="#" onclick="javascript:tv();" ></a>
  <img src="https://randomness69js.github.io/tv/static.gif" id="screen">
- <img src="https://randomness69js.github.io/tv/desk.jpg" id="desk"> 
+ <img src="https://randomness69js.github.io/tv/desk.jpg" id="desk">  
+ <img onclick="zoomin();" src="magnifying.png" id="magnify"> 
 </body>
 <script>
 function tv() {
 document.getElementById("tvhref").hidden=true
 document.getElementById("screen").outerHTML="<iframe id='screenframe' frameBorder='0' height='120%' src='https://randomness69js.github.io/tv/gameselector.html'></iframe>"
 }
+zoomflag=0
+function zoomin(){
+document.body.style="transform: scale(2.5); overflow: hidden;"
+zoomint=setInterval(function(){if (!(document.getElementById("screenframe")==null)){document.getElementById("screenframe").contentDocument.documentElement.getElementsByClassName("sc-canvas")[0].width="1000";document.getElementById("screenframe").contentDocument.documentElement.getElementsByClassName("sc-canvas")[0].height="1000"}},100)
+document.getElementById("magnify").setAttribute("onclick","zoomout();");
+}
+function zoomout(){
+document.body.style="transform: scale(1);";
+clearInterval(zoomint)
+document.getElementById("magnify").setAttribute("onclick","zoomin();");
+}
+const magnifyingglass=document.getElementById("magnify")
+magnifyingglass.addEventListener("mouseleave",(event)=>{magnifyingglass.style="transition: 0.3s; transform: rotateX(40deg) rotateZ(15deg) scale(0.8);";}); 
+magnifyingglass.addEventListener("mouseover",(event)=>{magnifyingglass.style="transition: 0.3s; transform: scale(1.2,1.2);";});
 </script>
 </html>
