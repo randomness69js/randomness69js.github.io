@@ -1,4 +1,5 @@
 
+
 <html>
 <head name="viewport" content="initial-scale=12">
 <style>
@@ -64,6 +65,7 @@ img {
 </style>
 </head>
 <body>
+<audio id="hintaud" loop src="ttps://randomness69js.github.io/hintdoom.mp3"></audio>
 <img id="img1" src="https://randomness69js.github.io/tv/text1.png">
 <img id="img2" src="https://randomness69js.github.io/tv/game1.png">
 <img id="img3" onclick="javascript:left()" src="https://randomness69js.github.io/tv/left.png">
@@ -74,6 +76,7 @@ img {
 //THIS WAY OF SETTING UP SHIT IS HORRENDOUS I KNOW.
 //I HOPE THIS MESSY CODE DOESNST MAKE ME YANDARAREDEV 2.0
 //I TRIED TO MAKE IT AS CLEAN AS I CAN
+randgamechance=(Math.round(Math.random(10000)*10000)==2)
 gamenum=1
 gamenumlim=5
 if (localStorage.getItem("endingBgotten")=='true'||localStorage.getItem("endingBgotten")=='1') {
@@ -97,12 +100,35 @@ function rungame() {
  if (gamenum==1) {
   document.location.href="https://randomness69js.github.io/game.html"	
  } else {
+  if (gamenum==5) {
+   if (randgamechance) {
+    document.location.href="https://randomness69js.github.io/game5a.html" 
+   } else {
+    document.location.href="https://randomness69js.github.io/game5.html" 
+   }
+  } else {
  document.location.href="https://randomness69js.github.io/game"+gamenum+".html"
+}
  }
 }
 function update() {
  document.getElementById("img2").src="https://randomness69js.github.io/tv/game"+gamenum+".png"
-}
+ if (randgamechance) {
+     document.getElementById("hintaud").volume=0
+  document.getElementById("hintaud").play();
+  if (gamenum==5) {
+       document.getElementById("hintaud").volume=1
+  }
+  if ((gamenum==4)||(gamenum==6)) {
+   document.getElementById("hintaud").volume=0.5
+  }
+  if ((gamenum==3)||(gamenum==7)) {
+   document.getElementById("hintaud").volume=0.2
+  }  
+  if ((gamenum<3)||(gamenum>7)){
+   document.getElementById("hintaud").volume=0
+  }
+}}
 document.addEventListener("keydown", (event) => {
 switch (event.key) {
  case "ArrowLeft":
