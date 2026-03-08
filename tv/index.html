@@ -78,7 +78,7 @@ document.getElementById("screen").outerHTML="<iframe id='screenframe' frameBorde
 zoomflag=0
 function zoomin(){
 document.body.style="transform: scale(2.5); overflow: hidden;"
-zoomint=setInterval(function(){if (!(document.getElementById("screenframe")==null)){document.getElementById("screenframe").contentDocument.documentElement.getElementsByClassName("sc-canvas")[0].width="1000";document.getElementById("screenframe").contentDocument.documentElement.getElementsByClassName("sc-canvas")[0].height="1000"}},100)
+zoomint=setInterval(function(){if (!(document.getElementById("screenframe")==null)){if(!(document.getElementById("screenframe").contentDocument.documentElement.getElementsByClassName("sc-canvas")[0].width==undefined)){document.getElementById("screenframe").contentDocument.documentElement.getElementsByClassName("sc-canvas")[0].width="1000";document.getElementById("screenframe").contentDocument.documentElement.getElementsByClassName("sc-canvas")[0].height="1000"}}},100)
 document.getElementById("magnify").setAttribute("onclick","zoomout();");
 }
 function zoomout(){
