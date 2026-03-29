@@ -95,7 +95,7 @@
 const delay=ms=>new Promise(res => setTimeout(res, ms));
 const checkaccess=async()=>{
 await delay(20);
-ref=document.referrer.includes("office");
+ref=document.referrer.includes("randomness");
 if (!ref){
  document.location="/"; 
 }
