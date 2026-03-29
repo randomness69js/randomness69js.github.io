@@ -1,0 +1,108 @@
+
+<html>
+<title> Molten Slag - Characters </title>
+<head>
+<style>
+ #smg200worldicon {
+  left: 50%;
+ }
+ #text {
+  background: linear-gradient(0deg, red, yellow);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  outline: 5px solid white;
+ }
+ #textcontainer {
+  width: 95%;
+  margin: 0 auto;
+  max-width: 1500px;
+ }
+ #bigtext {
+   font-size:50px;
+ } 
+ #lessbigtext {
+   font-size:40px;
+ }
+ #imgcont {
+  width: 400px;
+ }
+ body {
+  background: radial-gradient(circle, darkred, orange, crimson);
+ }
+ h1 {
+  font-family: Helvetica;
+  color: white;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
+ } 
+ h2 {
+  font-family: Helvetica;
+  color: white;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
+ }
+ h4 {
+  font-family: Helvetica;
+  color: white;
+  font-size: 18px;  
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+ }
+</style>
+</head>
+<body>
+ <audio src="https://randomness69js.github.io/moltentheme.mp3" autoplay loop ></audio>
+ <header >
+   <center> <a href="https://randomness69js.github.io/"> <div width="400" id="imgcont"><img id="smg200worldicon" src="https://randomness69js.github.io/smg201worldlogo.png" width="400px" height="200px"></div></a></center>
+   <center> <h1 id="bigtext"> Character information. </h1> </center>
+ </header>
+ <div id="textcontainer">
+  <div id="text">
+   <h1 id="lessbigtext"> Molten Slag</h1>
+   <a onclick="javascript:det1();"> <img src="https://randomness69js.github.io/info/characterphotos/moltenslag.jpg" width="250px" height="300px"> </a>
+   <h1> hot</h1>
+   <h4> 
+   i am burning.<br>
+   it is so hot. <br>
+   the display for my thermometer has melted. <br>
+   i shouldnt be alive. <br>
+   my clothes have melted into a puddle. <br>
+   so hot. <br>
+   my sweat is boiling. <br>
+   hot. <br>   
+   hot hot hot hot hot hot. <br>
+   i can smell meat. <br>
+   i think i am being cooked alive.
+
+   </h4>  
+   <h1> so hot</h1>
+   <h4> 
+   so hot <br>
+   my saliva is boiling too<br>
+   very very hot <br>
+   </h4>
+
+   <h1> hot hot</h1>
+   <h4> 
+   hot very very hot <br>
+   it is so hot
+   </h4>
+
+  </div>
+ </div>
+<script>
+const delay=ms=>new Promise(res => setTimeout(res, ms));
+const checkaccess=async()=>{
+await delay(20);
+ref=document.referrer.includes("office");
+if (!ref){
+ document.location="/"; 
+}
+}
+checkaccess()
+document.getElementById("imgcont").addEventListener("mouseover",function(){document.getElementById("imgcont").style="transition: 0.3s; transform: scale(1.2,1.2);"})
+document.getElementById("imgcont").addEventListener("mouseleave",function(){document.getElementById("imgcont").style="transition: 0.3s; transform: scale(1,1);"})
+</script>
+</body>
+</html>
