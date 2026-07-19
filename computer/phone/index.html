@@ -134,7 +134,6 @@
    invalid();
   } else {
    if (!(pininput=="404-")) {
-   document.body.getElementsByTagName("audio")[0].pause()
    phoneaudio.src="https://randomness69js.github.io/computer/phone/numbers/phonedialing.wav"
    phoneaudio.play()
    screenid.value="DIALING"
@@ -154,6 +153,7 @@
    setTimeout(function () {red()},1000)
   } else if (pininput=="404-") {
     pininput="404-"
+      document.body.getElementsByTagName("audio")[0].pause()
     phoneaudio.src="https://randomness69js.github.io/computer/phone/numbers/phonespanishflea.wav"
     phoneaudio.play()
         document.getElementById("pinpad-input").value="JOY"
