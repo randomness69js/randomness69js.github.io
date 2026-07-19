@@ -1,3 +1,4 @@
+
 <html>
 <title> PHONE </title>
 <head>
@@ -115,7 +116,8 @@
  for (let i=0; i < 12; i++) {
   buttonid=buttons.item(i)
   buttonid.addEventListener("click",(e) => { 
-   if (pininput.length<12 && (!(screenid.value=="INVALID NUMBER")||!(screenid.value=="DIALING"))) {
+  if (pininput.length<12&&(pininput!=="404-"||document.getElementById("pinpad-input").value!=="JOY")) {
+   if (screenid.value!=="INVALID NUMBER"||screenid.value!=="DIALING")  { 
     pininput+=e.target.value
     phoneaudio.src="https://randomness69js.github.io/computer/phone/numbers/phone"+e.target.value+".wav"
     if (e.target.value=="*") { phoneaudio.src="https://randomness69js.github.io/computer/phone/numbers/phones.wav"}
@@ -124,17 +126,21 @@
     screenid.value=pininput
     if(pininput.length==3) { pininput+="-"}
     if(pininput.length==7) { pininput+="-"}
-   }
+   }}
    })
  }
  submitbutton.addEventListener("click",(e) => {
-  if (pininput.toString().includes("#")||pininput.toString().includes("*")||pininput.length<12) {
+  if (pininput.toString().includes("#")||pininput.toString().includes("*")||(pininput.length<12&&!(pininput.toString()=="404-"))) {
    invalid();
   } else {
+   if (!(pininput=="404-")) {
    phoneaudio.src="https://randomness69js.github.io/computer/phone/numbers/phonedialing.wav"
    phoneaudio.play()
    screenid.value="DIALING"
    setTimeout(function () {call()},9000)
+  } else {
+    call()
+  }
   }
  })
  function call() {
@@ -145,6 +151,12 @@
    phoneaudio.play()
    phoneaudio.addEventListener("ended", (event) => {document.location.href="ending.html" })
    setTimeout(function () {red()},1000)
+  } else if (pininput=="404-") {
+    pininput="404-"
+    phoneaudio.src="https://randomness69js.github.io/computer/phone/numbers/phonespanishflea.wav"
+    phoneaudio.play()
+        document.getElementById("pinpad-input").value="JOY"
+    phoneaudio.addEventListener("ended", (event) => {phoneaudio.play()})
   } else {
    phoneaudio.src="https://randomness69js.github.io/computer/phone/numbers/phonenumbernotexist.wav"
    phoneaudio.play()
