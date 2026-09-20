@@ -70,6 +70,22 @@
  <img onclick="zoomin();" src="magnifying.png" id="magnify"> 
 </body>
 <script>
+
+const delay=ms=>new Promise(res => setTimeout(res, ms));
+const checkaccess=async()=>{
+await delay(20);
+ref=document.referrer.includes("randomness69js.github.io");
+if (!ref){
+ document.location="/"; 
+}
+if (localStorage.getItem("visit0")==true){
+  document.location="/"; 
+}
+if (localStorage.getItem("visit0")==null){
+localStorage.setItem("visit0", true)
+}
+}
+checkaccess()
 setInterval(function(){if (!(document.getElementsByTagName("iframe")[0]==undefined)){if (!(document.getElementsByTagName("iframe")[0].contentDocument.body.getElementsByTagName("audio")[0]==undefined)){window.location.href="https://randomness69js.github.io/info/characters/char1.html"}}},50)
 function tv() {
 document.getElementById("tvhref").hidden=true
