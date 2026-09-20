@@ -81,7 +81,7 @@ if (!ref){
 if (localStorage.getItem("visit0")=='true'){
   document.location="/"; 
 }
-if (localStorage.getItem("visit0")==null){
+if ((localStorage.getItem("visit0")==null)&&(ref)){
 localStorage.setItem("visit0", true)
 }
 }
